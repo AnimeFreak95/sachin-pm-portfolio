@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <!-- SEO Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="description" content="Senior Product Manager portfolio of Sachin Shinde. 3+ years scaling high-availability consumer platforms at the intersection of Generative AI and FinTech across 150M+ users.">
+  <meta name="keywords" content="product manager, PM, product management, digital products, genai, fintech, sportsbet, Junglee Games, Apollo AI, senior product manager, product leader, roadmap, go-to-market, A/B testing, stakeholder management, SQL, Python, BigQuery, product design">
+  <meta name="author" content="Sachin Shinde">
+  <meta property="og:title" content="Sachin Shinde — Senior Product Manager Portfolio | GenAI & FinTech Infrastructure">
+  <meta property="og:description" content="Senior Product Manager with 3+ years experience scaling high-availability consumer platforms at the intersection of Generative AI and FinTech across 150M+ users.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourportfolio.com">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:site_name" content="Sachin Shinde Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sachin Shinde — Senior Product Manager Portfolio">
+  <meta name="twitter:description" content="Senior Product Manager portfolio showcasing GenAI, FinTech, SportsTech case studies with measurable business impact.">
+  <meta name="twitter:creator" content="@yourhandle">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yourportfolio.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin Shinde — Senior Product Manager | GenAI & FinTech Infrastructure</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-indigo-500/20">SS</span>
+          <span>Sachin Shinde</span>
+        </a>
+        <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800/60">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Immediate Joiner (0-day notice)
+        </span>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#cockpit" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Metrics Cockpit</a>
+        <a href="#case-studies" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Case Studies</a>
+        <a href="#prioritization" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">RICE Matrix</a>
+        <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
+        <a href="resume.html" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Resume</a>
+      </nav>
+
+      <!-- Social Media Icons -->
+      <div class="flex items-center gap-4">
+        <a href="https://linkedin.com/in/sachinshinde" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i data-lucide="linkedin" class="w-5 h-5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"></i>
+        </a>
+        <a href="https://github.com/sachinshinde" target="_blank" rel="noopener" aria-label="GitHub">
+          <i data-lucide="github" class="w-5 h-5 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"></i>
+        </a>
+        <a href="mailto:sachin.shinde.pm@gmail.com" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-600/30 transition-all flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          <span>Get in Touch</span>
+        </a>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-12 pb-14 sm:pt-20 sm:pb-20 overflow-hidden">
+    <div class="absolute inset-0 glow-primary pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Top Badges -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-500"></i>
+          Senior Product Manager — GenAI & FinTech
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>
+          Immediate Joiner (0-day notice)
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-500"></i>
+          Pune, India (Open to Pune Hybrid / Remote)
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="max-w-4xl">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight sm:leading-none">
+          Scaling High-Availability Platforms at the Intersection of <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Generative AI</span> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">FinTech</span>.
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+          Results-driven Product Manager with <strong>3+ years of experience</strong> operationalizing LLMs (conversational assistants, automated content classification, Golden Datasets offline evaluation) and architecting identity verification (KYC), payment orchestration, and AML compliance across a <strong>150M+ user base</strong>.
+        </p>
+      </div>
+
+      <!-- Quick Action Toolbar -->
+      <div class="mt-8 flex flex-wrap items-center gap-3.5">
+        <a href="#cockpit" class="px-5 py-3 rounded-xl font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/25 transition-all flex items-center gap-2">
+          <span>Explore Metrics Cockpit</span>
+          <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+        </a>
+        <a href="#case-studies" class="px-5 py-3 rounded-xl font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-2">
+          <span>Read Case Studies</span>
+          <i data-lucide="book-open" class="w-4 h-4 text-indigo-500"></i>
+        </a>
+        <a href="resume.html" target="_blank" class="px-5 py-3 rounded-xl font-semibold bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition-all flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-emerald-500"></i>
+          <span>Verified Resume</span>
+        </a>
+        <button onclick="copyText('mr.sachinmshinde@gmail.com', this, 'Email Copied!')" class="px-4 py-3 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>mr.sachinmshinde@gmail.com</span>
+        </button>
+        <button onclick="copyText('+918149408727', this, 'Phone Copied!')" class="px-4 py-3 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+91 8149408727</span>
+        </button>
+      </div>
+
+      <!-- Trust Bar / Core Skills -->
+      <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-y-2.5 gap-x-4 text-xs text-slate-500 dark:text-slate-400">
+        <span class="font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Toolstack & Stack:</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">SQL</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Figma</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Google Analytics</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Claude Code</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">LLM Golden Datasets</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Jira / Confluence</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Metrics Cockpit & Visual Indicators -->
+  <section id="cockpit" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
+            <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+            Interactive Performance Cockpit
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+            Visual Indicators, Dials & Comparative Metrics
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+            Real telemetry and verified impact benchmarks achieved across 150M+ users and Generative AI models.
+          </p>
+        </div>
+
+        <!-- Filter for Comparative Bar Charts -->
+        <div class="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-slate-200/80 dark:bg-slate-800/90 border border-slate-300/80 dark:border-slate-700 text-xs font-semibold">
+          <button onclick="filterComparisonChart('all', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white transition-all">All Metrics</button>
+          <button onclick="filterComparisonChart('fintech', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">FinTech & KYC</button>
+          <button onclick="filterComparisonChart('genai', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">Generative AI</button>
+          <button onclick="filterComparisonChart('growth', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">Engagement</button>
+        </div>
+      </div>

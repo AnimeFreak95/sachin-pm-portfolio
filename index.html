@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <!-- SEO & Performance Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin Shinde — Senior Product Manager | GenAI & FinTech Infrastructure</title>
+  <meta name="description" content="Senior Product Manager portfolio of Sachin Shinde. 3+ years scaling high-availability consumer platforms at the intersection of Generative AI and FinTech across 150M+ users.">
+  <meta name="keywords" content="product manager, PM, product management, digital products, genai, fintech, sportsbet, Junglee Games, Apollo AI, senior product manager, product leader, roadmap, go-to-market, A/B testing, stakeholder management, SQL, Python, BigQuery, product design">
+  <meta name="author" content="Sachin Shinde">
+  <meta property="og:title" content="Sachin Shinde — Senior Product Manager Portfolio | GenAI & FinTech Infrastructure">
+  <meta property="og:description" content="Senior Product Manager with 3+ years experience scaling high-availability consumer platforms at the intersection of Generative AI and FinTech across 150M+ users.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#312e81',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Mermaid.js for Native Interactive Diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-indigo-500/20">SS</span>
+          <span>Sachin Shinde</span>
+        </a>
+        <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800/60">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          Immediate Joiner (0-day notice)
+        </span>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#cockpit" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Metrics Cockpit</a>
+        <a href="#case-studies" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Case Studies</a>
+        <a href="#prioritization" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">RICE Matrix</a>
+        <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
+        <a href="resume.html" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Resume</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+        </button>
+
+        <!-- Direct Contact Action -->
+        <a href="#contact" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-600/30 transition-all flex items-center gap-1.5">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          <span>Get in Touch</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-12 pb-14 sm:pt-20 sm:pb-20 overflow-hidden">
+    <div class="absolute inset-0 glow-primary pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      
+      <!-- Top Badges -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-500"></i>
+          Senior Product Manager — GenAI & FinTech
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-500"></i>
+          Immediate Joiner (0-day notice)
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-500"></i>
+          Pune, India (Open to Pune Hybrid / Remote)
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <div class="max-w-4xl">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight sm:leading-none">
+          Scaling High-Availability Platforms at the Intersection of <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Generative AI</span> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-400">FinTech</span>.
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+          Results-driven Product Manager with <strong>3+ years of experience</strong> operationalizing LLMs (conversational assistants, automated content classification, sub-20ms intent routing, Golden Datasets evaluation) and architecting identity verification (KYC), payment orchestration, and AML compliance across a <strong>150M+ user base</strong>.
+        </p>
+      </div>
+
+      <!-- Quick Action Toolbar -->
+      <div class="mt-8 flex flex-wrap items-center gap-3.5">
+        <a href="#cockpit" class="px-5 py-3 rounded-xl font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/25 transition-all flex items-center gap-2">
+          <span>Explore Metrics Cockpit</span>
+          <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+        </a>
+        <a href="#case-studies" class="px-5 py-3 rounded-xl font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-2">
+          <span>Read Case Studies</span>
+          <i data-lucide="book-open" class="w-4 h-4 text-indigo-500"></i>
+        </a>
+        <a href="resume.html" target="_blank" class="px-5 py-3 rounded-xl font-semibold bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition-all flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-emerald-500"></i>
+          <span>Verified Resume</span>
+        </a>
+        <button onclick="copyText('mr.sachinmshinde@gmail.com', this, 'Email Copied!')" class="px-4 py-3 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
+          <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+          <span>mr.sachinmshinde@gmail.com</span>
+        </button>
+        <button onclick="copyText('+918149408727', this, 'Phone Copied!')" class="px-4 py-3 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          <span>+91 8149408727</span>
+        </button>
+      </div>
+
+      <!-- Trust Bar / Core Skills -->
+      <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-y-2.5 gap-x-4 text-xs text-slate-500 dark:text-slate-400">
+        <span class="font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Toolstack & Stack:</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">SQL</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Figma</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Google Analytics</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Claude Code</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Agentic RAG & Routing</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">LLM Golden Datasets</span>
+        <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Jira / Confluence</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Metrics Cockpit & Visual Indicators -->
+  <section id="cockpit" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
+            <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+            Interactive Performance Cockpit
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+            Visual Indicators, Dials & Comparative Metrics
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+            Real telemetry and verified impact benchmarks achieved across 150M+ users and Generative AI systems.
+          </p>
+        </div>
+
+        <!-- Filter for Comparative Bar Charts -->
+        <div class="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-slate-200/80 dark:bg-slate-800/90 border border-slate-300/80 dark:border-slate-700 text-xs font-semibold">
+          <button onclick="filterComparisonChart('all', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white transition-all">All Metrics</button>
+          <button onclick="filterComparisonChart('fintech', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">FinTech & KYC</button>
+          <button onclick="filterComparisonChart('genai', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">Generative AI</button>
+          <button onclick="filterComparisonChart('growth', this)" class="chart-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">Engagement</button>
+        </div>
+      </div>
+
+      <!-- Top Row: Radial Gauge Dials -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        
+        <!-- Dial 1: 98% Compliance -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+          <div class="relative w-18 h-18 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+              <path class="text-slate-200 dark:text-slate-800" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="gauge-circle" stroke-dasharray="100, 100" stroke-dashoffset="2" stroke-width="3.5" stroke="#f59e0b" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <span class="absolute font-mono font-extrabold text-xs text-slate-900 dark:text-white">98%</span>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">Statutory Rigor</div>
+            <div class="text-sm font-extrabold text-slate-900 dark:text-white mt-0.5">Regulatory Compliance</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">AML exposure reduced</div>
+          </div>
+        </div>
+
+        <!-- Dial 2: 40% KYC Automation -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+          <div class="relative w-18 h-18 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+              <path class="text-slate-200 dark:text-slate-800" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="gauge-circle" stroke-dasharray="100, 100" stroke-dashoffset="20" stroke-width="3.5" stroke="#10b981" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <span class="absolute font-mono font-extrabold text-xs text-slate-900 dark:text-white">40%</span>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">150M+ Scale</div>
+            <div class="text-sm font-extrabold text-slate-900 dark:text-white mt-0.5">KYC Automation</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Automated Address & PAN</div>
+          </div>
+        </div>
+
+        <!-- Dial 3: +20% CSAT -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+          <div class="relative w-18 h-18 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+              <path class="text-slate-200 dark:text-slate-800" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="gauge-circle" stroke-dasharray="100, 100" stroke-dashoffset="15" stroke-width="3.5" stroke="#818cf8" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <span class="absolute font-mono font-extrabold text-xs text-slate-900 dark:text-white">+20%</span>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">Agentic Quality</div>
+            <div class="text-sm font-extrabold text-slate-900 dark:text-white mt-0.5">CSAT & Accuracy</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">Live inventory tool checks</div>
+          </div>
+        </div>
+
+        <!-- Dial 4: 35% CAC Reduction -->
+        <div class="glass-panel p-5 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+          <div class="relative w-18 h-18 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+              <path class="text-slate-200 dark:text-slate-800" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path class="gauge-circle" stroke-dasharray="100, 100" stroke-dashoffset="30" stroke-width="3.5" stroke="#ec4899" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            </svg>
+            <span class="absolute font-mono font-extrabold text-xs text-slate-900 dark:text-white">-35%</span>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-slate-500 font-mono">Acquisition</div>
+            <div class="text-sm font-extrabold text-slate-900 dark:text-white mt-0.5">CAC Reduction</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">D0 conv: 2.7% ➔ 4.8%</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row: Dynamic Comparative Bar Charts -->
+      <div class="glass-panel p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <i data-lucide="split" class="w-4 h-4 text-indigo-500"></i>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider font-mono">
+              Before vs. After Impact Benchmark
+            </h3>
+          </div>
+          <span class="text-xs text-slate-500 font-mono">Grey: Baseline • Gradient: Shipped Post-Launch</span>
+        </div>
+
+        <div id="chart-bars-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Dynamically populated via app.js -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Case Studies Section -->
+  <section id="case-studies" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">Product Case Studies</h2>
+        <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Deep Dives: Problem, Strategy & Execution</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Click on any case study card to view the detailed PRD breakdown, architecture flow, and retrospective.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-slate-200/80 dark:bg-slate-900 border border-slate-300/80 dark:border-slate-800 text-xs font-semibold">
+        <button data-filter="all" class="case-filter-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white transition-all">All Studies</button>
+        <button data-filter="genai" class="case-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-indigo-600 transition-all">Generative AI</button>
+        <button data-filter="fintech" class="case-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-indigo-600 transition-all">FinTech & KYC</button>
+        <button data-filter="growth" class="case-filter-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-indigo-600 transition-all">Discovery & Scale</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Case Study 1: Agentic AI & Intent Routing -->
+      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="genai">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+              Generative AI Architecture
+            </span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Conversational AI</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+            Enterprise Agentic AI & Vernacular Intent Routing Architecture
+          </h3>
+          <p class="text-xs font-medium text-indigo-600 dark:text-indigo-400 mt-1 font-mono">
+            Sub-20ms Router, Fast-Track Pipeline & Live Valmo Logistics RAG
+          </p>
+
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+            Solved the unit economics trap and AI hallucinations by decoupling simple catalog searches from complex reasoning via a sub-20ms quantized router, with live tool execution against inventory and logistics.
+          </p>
+
+          <!-- Key Metrics Badges -->
+          <div class="grid grid-cols-3 gap-2 my-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">&lt;20ms</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Intent Latency</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">~0 Cost</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Fast-Track Tokens</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-indigo-600 dark:text-indigo-400 font-mono">+20%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">CSAT Score</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between">
+          <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+            <span>Agentic RAG</span> • <span>Quantized Router</span> • <span>Valmo API</span>
+          </div>
+          <button onclick="openCaseStudy('apollo-ai')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/20">
+            <span>Read Deep Dive</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Case Study 2: KYC Automation & Shared Wallet -->
+      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="fintech">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+              FinTech & Compliance
+            </span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Junglee Games Portfolio</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+            Identity Verification (KYC) at 150M+ Scale & Shared Wallet
+          </h3>
+          <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-1 font-mono">
+            Aadhaar Lite, PAN Plus, DigiLocker 2.0 & Multi-Product Growth
+          </p>
+
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+            Replaced manual onboarding bottlenecks with automated Aadhaar Lite & PAN Plus flows, fallback API orchestration (Hyperverge, Idfy), and portfolio-wide Shared Wallet and Shared KYC architecture.
+          </p>
+
+          <!-- Key Metrics Badges -->
+          <div class="grid grid-cols-3 gap-2 my-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">40%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Automation Gain</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">35% Cut</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">CAC Reduction</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400 font-mono">38%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Revenue Growth</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between">
+          <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+            <span>150M+ Users</span> • <span>DigiLocker 2.0</span> • <span>API Orchestration</span>
+          </div>
+          <button onclick="openCaseStudy('kyc-automation')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-emerald-600/20">
+            <span>Read Deep Dive</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Case Study 3: Multi-Modal Search & GGWP -->
+      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="growth">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 dark:bg-sky-950/80 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+              Discovery & Scale
+            </span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Sportsbet Australia</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+            Multi-Modal Rich Search & GGWP Content Classification
+          </h3>
+          <p class="text-xs font-medium text-sky-600 dark:text-sky-400 mt-1 font-mono">
+            Feed Moderation PRD, Live Streams & UGC Scalability
+          </p>
+
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+            Transformed static match search into an interactive discovery engine with User Profiles, Live Streams, and Replay cards while building the GGWP content moderation system to safeguard UGC feeds.
+          </p>
+
+          <!-- Key Metrics Badges -->
+          <div class="grid grid-cols-3 gap-2 my-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-sky-600 dark:text-sky-400 font-mono">+15%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Video Asset CTR</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-sky-600 dark:text-sky-400 font-mono">+7%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Bet Conversion</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-sky-600 dark:text-sky-400 font-mono">Scalable</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">UGC Logic</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between">
+          <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+            <span>Video Discovery</span> • <span>UGC Moderation</span> • <span>Feed UX</span>
+          </div>
+          <button onclick="openCaseStudy('multimodal-search')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-sky-600/20">
+            <span>Read Deep Dive</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Case Study 4: TDS Compliance & Retention -->
+      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="fintech">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+              Tax & Retention Optimization
+            </span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Junglee Games Portfolio</span>
+          </div>
+
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+            Turning Statutory Tax Friction into a Retention Engine
+          </h3>
+          <p class="text-xs font-medium text-amber-600 dark:text-amber-400 mt-1 font-mono">
+            In-App TDS Certificates, First-Withdrawal Cashback & AML Controls
+          </p>
+
+          <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+            Mapped customer friction around mandatory 30% TDS deductions, designing real-time Form 16A downloads and initial withdrawal cashback incentives that defended user LTV and cut support tickets by 25%.
+          </p>
+
+          <!-- Key Metrics Badges -->
+          <div class="grid grid-cols-3 gap-2 my-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-amber-600 dark:text-amber-400 font-mono">+10%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">D7 Retention</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-amber-600 dark:text-amber-400 font-mono">-25%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Support Tickets</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 text-center">
+              <div class="text-lg font-extrabold text-amber-600 dark:text-amber-400 font-mono">98%</div>
+              <div class="text-[10px] text-slate-500 uppercase font-bold">Compliance Rate</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 flex items-center justify-between">
+          <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
+            <span>Journey Mapping</span> • <span>Tax Infrastructure</span> • <span>AML Risk</span>
+          </div>
+          <button onclick="openCaseStudy('tds-compliance')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-amber-600/20">
+            <span>Read Deep Dive</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive RICE Prioritization & Trade-off Matrix -->
+  <section id="prioritization" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">
+          <i data-lucide="table-properties" class="w-4 h-4"></i>
+          Strategic Decision Making
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+          RICE Prioritization Matrix & Hard Trade-offs
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          How I evaluate initiatives, calculate expected ROI (Reach × Impact × Confidence / Effort), and choose what <em>not</em> to build.
+        </p>
+      </div>
+
+      <!-- Interactive Table -->
+      <div class="glass-panel rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-200/70 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 font-semibold uppercase text-xs font-mono">
+              <tr>
+                <th class="p-3.5">Initiative & Trade-off</th>
+                <th class="p-3.5">Domain</th>
+                <th class="p-3.5">Reach</th>
+                <th class="p-3.5">Impact</th>
+                <th class="p-3.5">Confidence</th>
+                <th class="p-3.5">Effort</th>
+                <th class="p-3.5">RICE Score</th>
+                <th class="p-3.5">Status</th>
+              </tr>
+            </thead>
+            <tbody id="rice-matrix-tbody" class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              <!-- Dynamically rendered via app.js -->
+            </tbody>
+          </table>
+        </div>
+        <div class="p-3 bg-slate-50 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 font-mono flex items-center justify-between">
+          <span>* RICE Score = (Reach × Impact × Confidence) / Effort</span>
+          <span class="text-emerald-600 dark:text-emerald-400 font-semibold">100% Shipped to Production</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PM Frameworks & Strategic DNA -->
+  <section id="frameworks" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center max-w-2xl mx-auto">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">Operating Model</h2>
+      <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">How I Build & Ship High-Scale Products</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/70">
+        <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold mb-4">
+          <i data-lucide="target" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Discovery & Prioritization</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          Rigorous qualitative user research coupled with quantitative funnel telemetry. Prioritize using RICE/ICE frameworks anchored strictly on North Star metrics, D0/D14 retention cohorts, and unit CAC economics.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-mono text-indigo-600 dark:text-indigo-400">
+          <span>#RICEPrioritization</span> <span>#CohortAnalysis</span> <span>#FunnelTelemetry</span>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/70">
+        <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold mb-4">
+          <i data-lucide="cpu" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Agentic AI & Systems Engineering</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          Move past naive LLM prompts to production-grade lifecycle architectures. Deploy sub-20ms intent routers, agentic tool execution against live databases, Golden Datasets evaluation, and token economics optimization.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-mono text-purple-600 dark:text-purple-400">
+          <span>#IntentRouting</span> <span>#AgenticRAG</span> <span>#TokenEconomics</span>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/70">
+        <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold mb-4">
+          <i data-lucide="shield-check" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">FinTech & Regulatory Muscle</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+          Align Legal, Compliance, Engineering, and Growth teams to translate complex statutory regulations (KYC, AML, TDS) into single-tap, high-converting product journeys without compromising security or uptime.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] font-mono text-emerald-600 dark:text-emerald-400">
+          <span>#KYCAutomation</span> <span>#AMLCompliance</span> <span>#PaymentOrchestration</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Experience Timeline -->
+  <section id="experience" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80 dark:border-slate-800/80">
+    <div class="mb-12">
+      <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">Track Record</h2>
+      <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Professional Experience</p>
+    </div>
+
+    <div class="space-y-8 relative before:absolute before:inset-0 before:left-3.5 md:before:left-4 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
+      
+      <!-- Junglee Games -->
+      <div class="relative flex items-start gap-4 md:gap-6 pl-8 md:pl-10">
+        <div class="absolute left-1.5 md:left-2 top-1.5 w-4 h-4 rounded-full bg-indigo-600 border-4 border-white dark:border-slate-950"></div>
+        <div class="w-full glass-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Product Manager</h3>
+              <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Junglee Games India Pvt. Ltd. (Flutter Entertainment PLC)</p>
+            </div>
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+              June 2023 – September 2026 • Gurugram, India
+            </div>
+          </div>
+
+          <div class="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-xs">AI, Search & Engagement (Internal transfer to lead Sportsbet Australia initiatives):</span>
+              <ul class="list-disc list-inside mt-1.5 space-y-1 text-slate-600 dark:text-slate-400">
+                <li>Orchestrated end-to-end product discovery & PRD for feed moderation system, driving a <strong>7% increase in bet conversion rates</strong> via targeted UX optimizations.</li>
+                <li>Expanded Rich Content Search into a multi-modal discovery experience (Profiles, Live Streams, Replay cards), driving a <strong>15% lift in video-asset CTR</strong>.</li>
+                <li>Optimized LLM-powered Apollo AI chatbot through iterative prompt engineering and A/B testing, expanding market coverage and achieving a <strong>10% uplift in platform bet conversions</strong>.</li>
+                <li>Spearheaded AI betting assistant, increasing bet placement by <strong>6pp among new users</strong>; established an offline evaluation framework using Golden Datasets, improving <strong>CSAT by 20%</strong>.</li>
+                <li>Architected GGWP content classification system for bet descriptions, streamlining moderation workflows and UGC scalability.</li>
+              </ul>
+            </div>
+
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+              <span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider text-xs">KYC, Compliance & Payments (Transactions Charter across Junglee Portfolio):</span>
+              <ul class="list-disc list-inside mt-1.5 space-y-1 text-slate-600 dark:text-slate-400">
+                <li>Spearheaded product strategy for User Verification (KYC) for <strong>150Mn+ users</strong>, driving a <strong>40% gain in KYC automation</strong>.</li>
+                <li>Integrated strategic third-party APIs (Hyperverge, Idfy) to reduce manual processing <strong>TAT by 25%</strong>.</li>
+                <li>Directed development of Shared Wallet and Shared KYC across fantasy apps, advancing <strong>D0 cross-sell conversion by 18%</strong> and generating <strong>38% overall revenue growth</strong>.</li>
+                <li>Revamped User Verification onboarding using Aadhaar Lite and PAN Plus flows, scaling <strong>D0 conversion from 2.7% to 4.8%</strong> and reducing <strong>CAC by 35%</strong>.</li>
+                <li>Pioneered PAN verification via DigiLocker and OCR edge-case handling (success rate <strong>+24%</strong>, D14 retention <strong>+0.2pp</strong>) followed by DigiLocker 2.0 flow (overall verification <strong>+12%</strong>, D14 retention <strong>+0.35pp</strong>).</li>
+                <li>Quantified friction via journey mapping to launch TDS certificate feature (<strong>+10% D7 retention, -25% support tickets</strong>) and initial-withdrawal TDS cashback (<strong>+1.5pp D30 retention, +3.2% revenue</strong>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Indian Oil Corporation -->
+      <div class="relative flex items-start gap-4 md:gap-6 pl-8 md:pl-10">
+        <div class="absolute left-1.5 md:left-2 top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-white dark:border-slate-950"></div>
+        <div class="w-full glass-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Assistant Project Manager</h3>
+              <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Indian Oil Corporation Limited (IOCL)</p>
+            </div>
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+              September 2017 – July 2021 • Haryana, India
+            </div>
+          </div>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <li>Spearheaded delivery of <strong>INR 127 Cr</strong> in critical infrastructure projects, leading a core 5-member team with a record of zero safety incidents.</li>
+            <li>Orchestrated a cross-functional workforce of <strong>700+</strong> and managed partnerships with 2 PMCs, 5 contractors, and 15+ vendors.</li>
+            <li>Directed installation and QA of 250+ equipment units to achieve <strong>98% operational uptime</strong>, resolving 90% of disputes through mediation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FountLab Solutions -->
+      <div class="relative flex items-start gap-4 md:gap-6 pl-8 md:pl-10">
+        <div class="absolute left-1.5 md:left-2 top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-white dark:border-slate-950"></div>
+        <div class="w-full glass-panel p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">Marketing Intern</h3>
+              <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">FountLab Solutions Pvt. Ltd.</p>
+            </div>
+            <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+              April 2022 – May 2022 • Pune, India
+            </div>
+          </div>
+          <ul class="list-disc list-inside mt-2 space-y-1 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <li>Partnered with cross-functional stakeholders to define product vision and UX requirements for website redesign (+10% engagement).</li>
+            <li>Analyzed competitive landscapes across 10+ industry peers to inform product strategy (+5% market share).</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education, Awards & Credentials -->
+  <section class="py-16 bg-slate-100/60 dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Education & Achievements -->
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono mb-4">Education & Academic Rigor</h2>
+          
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">Master of Business Administration (MBA)</h4>
+                  <p class="text-xs text-indigo-600 dark:text-indigo-400">Indian Institute of Management Raipur (IIM Raipur)</p>
+                </div>
+                <span class="text-xs font-mono text-slate-500">2021 – 2023</span>
+              </div>
+              <div class="mt-2 text-xs font-mono text-slate-600 dark:text-slate-400">GPA: <strong>8.04 / 10.0</strong></div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">Bachelor of Engineering (B.E. Mechanical)</h4>
+                  <p class="text-xs text-indigo-600 dark:text-indigo-400">K. K. Wagh Education Society College of Engineering</p>
+                </div>
+                <span class="text-xs font-mono text-slate-500">2012 – 2016</span>
+              </div>
+              <div class="mt-2 text-xs font-mono text-slate-600 dark:text-slate-400">GPA: <strong>74.51%</strong></div>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono mb-3">Honors & National Ranks</h3>
+            <div class="flex flex-wrap gap-2 text-xs font-medium">
+              <span class="px-3 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
+                ⭐ <strong>All India Rank 123</strong> — GATE Mechanical 2017
+              </span>
+              <span class="px-3 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                🏆 Exceptional Award — Junglee Games (Dec 2024)
+              </span>
+              <span class="px-3 py-1 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
+                🏅 Spot Awards (March 2026, June 2024)
+              </span>
+              <span class="px-3 py-1 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-300">
+                🎯 Top Rookie Award — Junglee Games (Dec 2023)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications & Skills -->
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono mb-4">Certifications & PM Tooling</h2>
+          
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Lean Six Sigma Green Belt Certification</h4>
+                <p class="text-xs text-slate-500">KPMG • Process Optimization & Root Cause Analysis</p>
+              </div>
+              <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">Jan 2022</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">The Complete SQL Bootcamp</h4>
+                <p class="text-xs text-slate-500">Udemy • Complex Queries, Cohort Analytics & Aggregations</p>
+              </div>
+              <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">June 2024</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Microsoft Power BI</h4>
+                <p class="text-xs text-slate-500">Udemy • Data Modeling, DAX & Executive Dashboards</p>
+              </div>
+              <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">May 2022</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+              <div>
+                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Everyday Excel</h4>
+                <p class="text-xs text-slate-500">University of Colorado Boulder on Coursera</p>
+              </div>
+              <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">March 2022</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Recruiter Pitch & Contact Section -->
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-indigo-200/80 dark:border-indigo-900/60 glow-primary relative overflow-hidden">
+      
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Ready to Onboard: Immediate Joiner (0-day notice)
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Let’s Build High-Impact AI & FinTech Products Together
+        </h2>
+        
+        <p class="text-slate-600 dark:text-slate-300 mt-4 text-base sm:text-lg leading-relaxed">
+          I am currently based out of <strong>Pune, India</strong> (open to Pune on-site/hybrid or remote roles) and available to join immediately without any notice period constraints. Let’s connect for a 15-minute introductory conversation.
+        </p>
+
+        <!-- Direct Contact Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+          
+          <div class="p-4 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 uppercase font-mono">Email Directly</div>
+                <a href="mailto:mr.sachinmshinde@gmail.com" class="text-sm font-bold text-slate-900 dark:text-white hover:text-indigo-600 transition-colors">
+                  mr.sachinmshinde@gmail.com
+                </a>
+              </div>
+            </div>
+            <button onclick="copyText('mr.sachinmshinde@gmail.com', this, 'Copied!')" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Copy Email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 uppercase font-mono">Direct Mobile</div>
+                <a href="tel:+918149408727" class="text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-600 transition-colors font-mono">
+                  +91 8149408727
+                </a>
+              </div>
+            </div>
+            <button onclick="copyText('+918149408727', this, 'Copied!')" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" title="Copy Phone Number">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="mailto:mr.sachinmshinde@gmail.com?subject=Product%20Manager%20Role%20Discussion" class="px-6 py-3.5 rounded-xl font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 transition-all flex items-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Schedule Intro Call</span>
+          </a>
+          <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl font-bold bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all flex items-center gap-2">
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>Open Resume (Printable)</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-200/80 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 Sachin Shinde • Senior Product Manager (AI & FinTech)
+      </div>
+      <div class="flex items-center gap-4 font-mono text-xs">
+        <span>Pune, India</span>
+        <span>•</span>
+        <span>+91 8149408727</span>
+        <span>•</span>
+        <span>0-Day Notice</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Container for Case Study Deep Dives -->
+  <div id="case-study-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <!-- Backdrop -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/75 backdrop-blur-md transition-opacity"></div>
+
+    <!-- Modal Box -->
+    <div class="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden z-10">
+      
+      <!-- Modal Top Bar -->
+      <div class="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/90">
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-500">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          <span>Verified PM Case Study & PRD Breakdown</span>
+        </div>
+        <button id="modal-close-btn" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Scrollable Content -->
+      <div id="modal-body" class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        <!-- Injected dynamically via app.js -->
+      </div>
+
+      <!-- Modal Bottom Actions -->
+      <div class="p-4 sm:p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/90 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xs text-slate-500 font-mono">
+          Sachin Shinde • Product Management Portfolio
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="document.getElementById('modal-close-btn').click()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">
+            Close
+          </button>
+          <a href="#contact" onclick="document.getElementById('modal-close-btn').click()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-all">
+            Discuss This Case Study
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
