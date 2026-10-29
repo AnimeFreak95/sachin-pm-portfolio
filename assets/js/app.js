@@ -434,38 +434,308 @@ const caseStudiesData = {
   }
 };
 
-// Application State & Controller
-document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  initComparisonChart('all');
-  initRiceMatrix();
-  initCaseStudyFilters();
-  initModal();
-  initCopyActions();
-});
+/* ========================================================
+   GLOBAL TOP-LEVEL INTERACTION HANDLERS (Available Instantly)
+   ======================================================== */
 
-// Theme Management (Light/Dark mode)
-function initTheme() {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const storedTheme = localStorage.getItem('theme');
-  
-  if (storedTheme === 'light') {
-    document.documentElement.classList.remove('dark');
-  } else {
-    document.documentElement.classList.add('dark');
+// 1. Smooth Scroll to Section with Navbar Offset
+window.scrollToSection = function(sectionId) {
+  const el = document.getElementById(sectionId);
+  if (!el) return;
+  const navbarHeight = 70;
+  const top = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+  window.scrollTo({ top, behavior: 'smooth' });
+};
+
+// 2. Open Case Study Modal
+window.openCaseStudy = function(studyId) {
+  const data = caseStudiesData[studyId];
+  if (!data) {
+    console.warn('Case study not found:', studyId);
+    return;
   }
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+  const modal = document.getElementById('case-study-modal');
+  const modalBody = document.getElementById('modal-body');
+  if (!modal || !modalBody) {
+    console.error('Modal DOM elements missing');
+    return;
   }
-}
 
-// Visual Comparison Bar Chart Renderer
-function initComparisonChart(categoryFilter) {
+  modalBody.innerHTML = `
+    <div class="space-y-6">
+      <!-- Header -->
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-5">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300">
+            ${data.badge}
+          </span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">${data.timeline}</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
+          ${data.title}
+        </h2>
+        <p class="text-base text-indigo-600 dark:text-indigo-400 font-medium mt-1">
+          ${data.subtitle}
+        </p>
+        <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-3 font-mono">
+          <span><strong>Role:</strong> ${data.role}</span>
+          <span>•</span>
+          <span><strong>Context:</strong> ${data.company}</span>
+        </div>
+      </div>
+
+      <!-- Visual Dials Section -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        ${data.dials.map(dial => `
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-4">
+            <div class="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
+              <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+                <path class="text-slate-200 dark:text-slate-700" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="gauge-circle" stroke-dasharray="100, 100" stroke-dashoffset="${100 - dial.pct}" stroke-width="3.5" stroke="${dial.color}" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <span class="absolute font-mono font-extrabold text-xs text-slate-900 dark:text-white">${dial.value}</span>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase font-mono">${dial.label}</div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">${dial.subtext}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <!-- Interactive Modal Tabs -->
+      <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 text-xs font-semibold overflow-x-auto">
+        <button onclick="switchModalTab('tab-overview', this)" class="modal-tab-btn px-3.5 py-2 rounded-xl bg-indigo-600 text-white font-medium transition-all shadow-sm">
+          Executive Summary
+        </button>
+        <button onclick="switchModalTab('tab-architecture', this)" class="modal-tab-btn px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all">
+          System Architecture & Flow
+        </button>
+        <button onclick="switchModalTab('tab-metrics', this)" class="modal-tab-btn px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all">
+          Verified Results Table
+        </button>
+        <button onclick="switchModalTab('tab-tradeoffs', this)" class="modal-tab-btn px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium transition-all">
+          Trade-offs & Decisions
+        </button>
+      </div>
+
+      <!-- Tab 1: Executive Summary -->
+      <div id="tab-overview" class="modal-tab-content space-y-5">
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Overview</h3>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
+            ${data.overview}
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Core Friction & Problem</h3>
+          <ul class="space-y-1.5">
+            ${data.problem.map(item => `
+              <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                <span class="text-rose-500 mt-0.5">✕</span>
+                <span>${item}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Shipped Product Solutions</h3>
+          <ul class="space-y-1.5">
+            ${data.strategy.map(item => `
+              <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                <span class="text-emerald-500 mt-0.5">✓</span>
+                <span>${item}</span>
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tab 2: System Architecture -->
+      <div id="tab-architecture" class="modal-tab-content hidden space-y-5">
+        ${data.architectureAscii ? `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">Visual Architecture Flowchart</h3>
+              <span class="text-[11px] font-mono text-indigo-500 font-semibold">Sub-20ms Routing + Agentic RAG</span>
+            </div>
+            <pre class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs font-mono overflow-x-auto border border-slate-800 leading-relaxed">${data.architectureAscii.trim()}</pre>
+          </div>
+        ` : ''}
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Architecture Components & Details</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            ${data.architectureNodes.map(node => `
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="w-6 h-6 rounded-md bg-indigo-600 text-white font-mono text-xs flex items-center justify-center font-bold">${node.step}</span>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-white">${node.title}</h4>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">${node.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        ${data.interviewGuide ? `
+          <div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-900/60">
+            <div class="flex items-center gap-2 text-xs font-bold text-indigo-300 uppercase tracking-wider font-mono mb-2">
+              <i data-lucide="mic" class="w-4 h-4 text-indigo-400"></i>
+              How to Walk Through This in Leadership Interviews
+            </div>
+            <ul class="space-y-1.5 text-xs text-indigo-200">
+              ${data.interviewGuide.map(guide => `
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-400 font-bold">👉</span>
+                  <span>${guide}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : ''}
+      </div>
+
+      <!-- Tab 3: Verified Results Table -->
+      <div id="tab-metrics" class="modal-tab-content hidden space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Baseline vs Shipped Comparison</h3>
+        <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 font-semibold uppercase text-xs font-mono">
+              <tr>
+                <th class="p-3">Key Metric</th>
+                <th class="p-3">Baseline</th>
+                <th class="p-3">Post-Launch Result</th>
+                <th class="p-3">Strategic Impact</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+              ${data.resultsTable.map(r => `
+                <tr>
+                  <td class="p-3 font-semibold text-slate-900 dark:text-white">${r.metric}</td>
+                  <td class="p-3 font-mono">${r.baseline}</td>
+                  <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">${r.result}</td>
+                  <td class="p-3">${r.impact}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 4: Trade-offs & Decisions -->
+      <div id="tab-tradeoffs" class="modal-tab-content hidden space-y-4">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Strategic Trade-offs ("What We Chose NOT to Build")</h3>
+        <div class="space-y-3">
+          ${data.tradeoffs.map(t => `
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+              <div class="flex items-start gap-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">
+                <span>✓ CHOSEN PATH:</span>
+                <span class="text-slate-900 dark:text-white font-normal">${t.chosen}</span>
+              </div>
+              <div class="flex items-start gap-2 text-xs font-bold text-rose-500 mb-1.5">
+                <span>✕ DE-PRIORITIZED:</span>
+                <span class="text-slate-600 dark:text-slate-400 font-normal">${t.deprioritized}</span>
+              </div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+                <strong>Rationale:</strong> ${t.reason}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Retrospective & Key Learnings -->
+      <div class="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-300 mb-1.5 font-mono">PM Retrospective & Core Takeaways</h3>
+        <ul class="space-y-1">
+          ${data.learnings.map(l => `
+            <li class="flex items-start gap-2 text-xs text-indigo-950 dark:text-indigo-200">
+              <span class="text-indigo-500 font-bold">»</span>
+              <span>${l}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    </div>
+  `;
+
+  modal.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+  if (window.lucide) window.lucide.createIcons();
+};
+
+// 3. Switch Tabs inside Modal
+window.switchModalTab = function(tabId, btnElement) {
+  const tabButtons = document.querySelectorAll('.modal-tab-btn');
+  const tabContents = document.querySelectorAll('.modal-tab-content');
+
+  tabButtons.forEach(b => {
+    b.classList.remove('bg-indigo-600', 'text-white', 'shadow-sm');
+    b.classList.add('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
+  });
+
+  btnElement.classList.add('bg-indigo-600', 'text-white', 'shadow-sm');
+  btnElement.classList.remove('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
+
+  tabContents.forEach(c => {
+    if (c.id === tabId) {
+      c.classList.remove('hidden');
+    } else {
+      c.classList.add('hidden');
+    }
+  });
+
+  if (window.lucide) window.lucide.createIcons();
+};
+
+// 4. Close Modal
+window.closeCaseStudyModal = function() {
+  const modal = document.getElementById('case-study-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+};
+
+// 5. Filter Comparison Chart
+window.filterComparisonChart = function(category, btnElement) {
+  const chartFilterBtns = document.querySelectorAll('.chart-filter-btn');
+  chartFilterBtns.forEach(b => {
+    b.classList.remove('bg-indigo-600', 'text-white', 'dark:bg-indigo-500');
+    b.classList.add('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
+  });
+
+  btnElement.classList.add('bg-indigo-600', 'text-white', 'dark:bg-indigo-500');
+  btnElement.classList.remove('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
+
+  renderComparisonChart(category);
+};
+
+// 6. Copy Feedback
+window.copyText = function(text, btnElement, successLabel) {
+  navigator.clipboard.writeText(text).then(() => {
+    const originalText = btnElement.innerHTML;
+    btnElement.innerHTML = `✓ ${successLabel || 'Copied!'}`;
+    btnElement.classList.add('bg-emerald-600', 'text-white');
+    
+    setTimeout(() => {
+      btnElement.innerHTML = originalText;
+      btnElement.classList.remove('bg-emerald-600', 'text-white');
+    }, 2000);
+  }).catch(err => {
+    console.error('Copy failed: ', err);
+  });
+};
+
+/* ========================================================
+   RENDERERS & LIFECYCLE INITIALIZATION
+   ======================================================== */
+
+function renderComparisonChart(categoryFilter) {
   const container = document.getElementById('chart-bars-container');
   if (!container) return;
 
@@ -514,21 +784,7 @@ function initComparisonChart(categoryFilter) {
   `).join('');
 }
 
-window.filterComparisonChart = function(category, btnElement) {
-  const chartFilterBtns = document.querySelectorAll('.chart-filter-btn');
-  chartFilterBtns.forEach(b => {
-    b.classList.remove('bg-indigo-600', 'text-white', 'dark:bg-indigo-500');
-    b.classList.add('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
-  });
-
-  btnElement.classList.add('bg-indigo-600', 'text-white', 'dark:bg-indigo-500');
-  btnElement.classList.remove('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
-
-  initComparisonChart(category);
-};
-
-// RICE Prioritization Matrix Table Renderer
-function initRiceMatrix() {
+function renderRiceMatrix() {
   const tableBody = document.getElementById('rice-matrix-tbody');
   if (!tableBody) return;
 
@@ -555,7 +811,25 @@ function initRiceMatrix() {
   `).join('');
 }
 
-// Case Study Filtering
+function initTheme() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const storedTheme = localStorage.getItem('theme');
+  
+  if (storedTheme === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    document.documentElement.classList.add('dark');
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
+}
+
 function initCaseStudyFilters() {
   const filterBtns = document.querySelectorAll('.case-filter-btn');
   const caseStudyCards = document.querySelectorAll('.case-study-card');
@@ -584,276 +858,26 @@ function initCaseStudyFilters() {
   });
 }
 
-// Modal Interactivity with 4 Tab Views
-function initModal() {
-  const modal = document.getElementById('case-study-modal');
+function setupModalListeners() {
   const modalBackdrop = document.getElementById('modal-backdrop');
   const modalCloseBtn = document.getElementById('modal-close-btn');
-  const modalBody = document.getElementById('modal-body');
 
-  window.openCaseStudy = function(studyId) {
-    const data = caseStudiesData[studyId];
-    if (!data) return;
-
-    modalBody.innerHTML = `
-      <div class="space-y-6">
-        <!-- Header -->
-        <div class="border-b border-slate-200 dark:border-slate-800 pb-5">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-300">
-              ${data.badge}
-            </span>
-            <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">${data.timeline}</span>
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">
-            ${data.title}
-          </h2>
-          <p class="text-base text-indigo-600 dark:text-indigo-400 font-medium mt-1">
-            ${data.subtitle}
-          </p>
-          <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-3 font-mono">
-            <span><strong>Role:</strong> ${data.role}</span>
-            <span>•</span>
-            <span><strong>Context:</strong> ${data.company}</span>
-          </div>
-        </div>
-
-        <!-- Visual Dials Section -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          ${data.dials.map(dial => `
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 flex items-center gap-4">
-              <div class="relative w-16 h-16 flex-shrink-0 flex items-center justify-center">
-                <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
-                  <path class="text-slate-200 dark:text-slate-700" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                  <path class="gauge-circle" stroke-dasharray="100, 100" stroke-dashoffset="${100 - dial.pct}" stroke-width="3.5" stroke="${dial.color}" stroke-linecap="round" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                </svg>
-                <span class="absolute font-mono font-extrabold text-xs text-slate-900 dark:text-white">${dial.value}</span>
-              </div>
-              <div>
-                <div class="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase">${dial.label}</div>
-                <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">${dial.subtext}</div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-
-        <!-- Interactive Modal Tabs -->
-        <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2 text-xs font-semibold overflow-x-auto">
-          <button onclick="switchModalTab('tab-overview', this)" class="modal-tab-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white transition-all">
-            Executive Summary
-          </button>
-          <button onclick="switchModalTab('tab-architecture', this)" class="modal-tab-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">
-            System Architecture & Flow
-          </button>
-          <button onclick="switchModalTab('tab-metrics', this)" class="modal-tab-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">
-            Verified Results Table
-          </button>
-          <button onclick="switchModalTab('tab-tradeoffs', this)" class="modal-tab-btn px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all">
-            Trade-offs & Decisions
-          </button>
-        </div>
-
-        <!-- Tab 1: Executive Summary -->
-        <div id="tab-overview" class="modal-tab-content space-y-5">
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Overview</h3>
-            <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm">
-              ${data.overview}
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Core Friction & Problem</h3>
-            <ul class="space-y-1.5">
-              ${data.problem.map(item => `
-                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                  <span class="text-rose-500 mt-0.5">✕</span>
-                  <span>${item}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Shipped Product Solutions</h3>
-            <ul class="space-y-1.5">
-              ${data.strategy.map(item => `
-                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                  <span class="text-emerald-500 mt-0.5">✓</span>
-                  <span>${item}</span>
-                </li>
-              `).join('')}
-            </ul>
-          </div>
-        </div>
-
-        <!-- Tab 2: System Architecture -->
-        <div id="tab-architecture" class="modal-tab-content hidden space-y-5">
-          <!-- Flowchart Card -->
-          ${data.architectureAscii ? `
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">Visual Architecture Flowchart</h3>
-                <span class="text-[11px] font-mono text-indigo-500 font-semibold">Sub-20ms Routing + Agentic RAG</span>
-              </div>
-              <pre class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs font-mono overflow-x-auto border border-slate-800 leading-relaxed">${data.architectureAscii.trim()}</pre>
-            </div>
-          ` : ''}
-
-          <!-- Step-by-Step Architecture Nodes -->
-          <div>
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Architecture Components & Details</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              ${data.architectureNodes.map(node => `
-                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
-                  <div class="flex items-center gap-2 mb-1.5">
-                    <span class="w-6 h-6 rounded-md bg-indigo-600 text-white font-mono text-xs flex items-center justify-center font-bold">${node.step}</span>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">${node.title}</h4>
-                  </div>
-                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">${node.desc}</p>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- Interview Guide Callout if present -->
-          ${data.interviewGuide ? `
-            <div class="p-4 rounded-xl bg-indigo-950/40 border border-indigo-900/60">
-              <div class="flex items-center gap-2 text-xs font-bold text-indigo-300 uppercase tracking-wider font-mono mb-2">
-                <i data-lucide="mic" class="w-4 h-4 text-indigo-400"></i>
-                How to Walk Through This in Leadership Interviews
-              </div>
-              <ul class="space-y-1.5 text-xs text-indigo-200">
-                ${data.interviewGuide.map(guide => `
-                  <li class="flex items-start gap-2">
-                    <span class="text-indigo-400 font-bold">👉</span>
-                    <span>${guide}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-          ` : ''}
-        </div>
-
-        <!-- Tab 3: Verified Results Table -->
-        <div id="tab-metrics" class="modal-tab-content hidden space-y-4">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Baseline vs Shipped Comparison</h3>
-          <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
-            <table class="w-full text-left text-xs sm:text-sm">
-              <thead class="bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 font-semibold uppercase text-xs font-mono">
-                <tr>
-                  <th class="p-3">Key Metric</th>
-                  <th class="p-3">Baseline</th>
-                  <th class="p-3">Post-Launch Result</th>
-                  <th class="p-3">Strategic Impact</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
-                ${data.resultsTable.map(r => `
-                  <tr>
-                    <td class="p-3 font-semibold text-slate-900 dark:text-white">${r.metric}</td>
-                    <td class="p-3 font-mono">${r.baseline}</td>
-                    <td class="p-3 font-mono font-bold text-emerald-600 dark:text-emerald-400">${r.result}</td>
-                    <td class="p-3">${r.impact}</td>
-                  </tr>
-                `).join('')}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- Tab 4: Trade-offs & Decisions -->
-        <div id="tab-tradeoffs" class="modal-tab-content hidden space-y-4">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 font-mono">Strategic Trade-offs ("What We Chose NOT to Build")</h3>
-          <div class="space-y-3">
-            ${data.tradeoffs.map(t => `
-              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
-                <div class="flex items-start gap-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1">
-                  <span>✓ CHOSEN PATH:</span>
-                  <span class="text-slate-900 dark:text-white font-normal">${t.chosen}</span>
-                </div>
-                <div class="flex items-start gap-2 text-xs font-bold text-rose-500 mb-1.5">
-                  <span>✕ DE-PRIORITIZED:</span>
-                  <span class="text-slate-600 dark:text-slate-400 font-normal">${t.deprioritized}</span>
-                </div>
-                <div class="text-[11px] text-slate-500 dark:text-slate-400 font-mono">
-                  <strong>Rationale:</strong> ${t.reason}
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-
-        <!-- Retrospective & Key Learnings -->
-        <div class="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-300 mb-1.5 font-mono">PM Retrospective & Core Takeaways</h3>
-          <ul class="space-y-1">
-            ${data.learnings.map(l => `
-              <li class="flex items-start gap-2 text-xs text-indigo-950 dark:text-indigo-200">
-                <span class="text-indigo-500 font-bold">»</span>
-                <span>${l}</span>
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-      </div>
-    `;
-
-    modal.classList.remove('hidden');
-    document.body.classList.add('overflow-hidden');
-    if (window.lucide) window.lucide.createIcons();
-  };
-
-  window.switchModalTab = function(tabId, btnElement) {
-    const tabButtons = document.querySelectorAll('.modal-tab-btn');
-    const tabContents = document.querySelectorAll('.modal-tab-content');
-
-    tabButtons.forEach(b => {
-      b.classList.remove('bg-indigo-600', 'text-white');
-      b.classList.add('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
-    });
-
-    btnElement.classList.add('bg-indigo-600', 'text-white');
-    btnElement.classList.remove('bg-slate-100', 'text-slate-700', 'dark:bg-slate-800', 'dark:text-slate-300');
-
-    tabContents.forEach(c => {
-      if (c.id === tabId) {
-        c.classList.remove('hidden');
-      } else {
-        c.classList.add('hidden');
-      }
-    });
-  };
-
-  function closeModal() {
-    modal.classList.add('hidden');
-    document.body.classList.remove('overflow-hidden');
-  }
-
-  if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalBackdrop) modalBackdrop.addEventListener('click', window.closeCaseStudyModal);
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', window.closeCaseStudyModal);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-      closeModal();
+    if (e.key === 'Escape') {
+      window.closeCaseStudyModal();
     }
   });
 }
 
-// Copy Action Feedback
-function initCopyActions() {
-  window.copyText = function(text, btnElement, successLabel) {
-    navigator.clipboard.writeText(text).then(() => {
-      const originalText = btnElement.innerHTML;
-      btnElement.innerHTML = `✓ ${successLabel || 'Copied!'}`;
-      btnElement.classList.add('bg-emerald-600', 'text-white');
-      
-      setTimeout(() => {
-        btnElement.innerHTML = originalText;
-        btnElement.classList.remove('bg-emerald-600', 'text-white');
-      }, 2000);
-    }).catch(err => {
-      console.error('Copy failed: ', err);
-    });
-  };
-}
+// Bootstrap on DOM Ready
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  renderComparisonChart('all');
+  renderRiceMatrix();
+  initCaseStudyFilters();
+  setupModalListeners();
+  if (window.lucide) window.lucide.createIcons();
+});

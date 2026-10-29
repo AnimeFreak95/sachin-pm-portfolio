@@ -41,12 +41,6 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Mermaid.js for Native Interactive Diagrams -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <script>
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-  </script>
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/custom.css">
 </head>
@@ -56,7 +50,7 @@
   <header class="sticky top-0 z-40 w-full glass-panel border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <a href="#hero" class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+        <a href="#hero" onclick="scrollToSection('hero'); return false;" class="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
           <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-md shadow-indigo-500/20">SS</span>
           <span>Sachin Shinde</span>
         </a>
@@ -67,10 +61,10 @@
       </div>
 
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#cockpit" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Metrics Cockpit</a>
-        <a href="#case-studies" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Case Studies</a>
-        <a href="#prioritization" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">RICE Matrix</a>
-        <a href="#experience" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
+        <a href="#cockpit" onclick="scrollToSection('cockpit'); return false;" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Metrics Cockpit</a>
+        <a href="#case-studies" onclick="scrollToSection('case-studies'); return false;" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Case Studies</a>
+        <a href="#prioritization" onclick="scrollToSection('prioritization'); return false;" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">RICE Matrix</a>
+        <a href="#experience" onclick="scrollToSection('experience'); return false;" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Experience</a>
         <a href="resume.html" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Resume</a>
       </nav>
 
@@ -82,16 +76,16 @@
         </button>
 
         <!-- Direct Contact Action -->
-        <a href="#contact" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-600/30 transition-all flex items-center gap-1.5">
+        <button onclick="scrollToSection('contact')" class="px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-sm shadow-indigo-600/30 transition-all flex items-center gap-1.5">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i>
           <span>Get in Touch</span>
-        </a>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="relative pt-12 pb-14 sm:pt-20 sm:pb-20 overflow-hidden">
+  <section id="hero" class="relative pt-12 pb-14 sm:pt-20 sm:pb-20 overflow-hidden scroll-mt-24">
     <div class="absolute inset-0 glow-primary pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       
@@ -123,30 +117,38 @@
 
       <!-- Quick Action Toolbar -->
       <div class="mt-8 flex flex-wrap items-center gap-3.5">
-        <a href="#cockpit" class="px-5 py-3 rounded-xl font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/25 transition-all flex items-center gap-2">
+        <button onclick="scrollToSection('cockpit')" class="px-5 py-3 rounded-xl font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/25 transition-all flex items-center gap-2">
           <span>Explore Metrics Cockpit</span>
           <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-        </a>
-        <a href="#case-studies" class="px-5 py-3 rounded-xl font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-2">
+        </button>
+        <button onclick="scrollToSection('case-studies')" class="px-5 py-3 rounded-xl font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-2">
           <span>Read Case Studies</span>
           <i data-lucide="book-open" class="w-4 h-4 text-indigo-500"></i>
-        </a>
+        </button>
+        <button onclick="openCaseStudy('apollo-ai')" class="px-4 py-3 rounded-xl font-medium bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 hover:bg-indigo-100 transition-all flex items-center gap-2 text-xs font-semibold">
+          <i data-lucide="cpu" class="w-3.5 h-3.5 text-indigo-500"></i>
+          <span>Featured: Agentic AI Deep Dive</span>
+        </button>
         <a href="resume.html" target="_blank" class="px-5 py-3 rounded-xl font-semibold bg-white dark:bg-slate-900 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition-all flex items-center gap-2">
           <i data-lucide="file-text" class="w-4 h-4 text-emerald-500"></i>
           <span>Verified Resume</span>
         </a>
-        <button onclick="copyText('mr.sachinmshinde@gmail.com', this, 'Email Copied!')" class="px-4 py-3 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
+      </div>
+
+      <!-- Contact Quick Pills -->
+      <div class="mt-4 flex flex-wrap items-center gap-2.5">
+        <button onclick="copyText('mr.sachinmshinde@gmail.com', this, 'Email Copied!')" class="px-3.5 py-2 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
           <i data-lucide="copy" class="w-3.5 h-3.5"></i>
           <span>mr.sachinmshinde@gmail.com</span>
         </button>
-        <button onclick="copyText('+918149408727', this, 'Phone Copied!')" class="px-4 py-3 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
+        <button onclick="copyText('+918149408727', this, 'Phone Copied!')" class="px-3.5 py-2 rounded-xl font-medium bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-300/80 dark:border-slate-800 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all flex items-center gap-2 text-xs font-mono">
           <i data-lucide="phone" class="w-3.5 h-3.5"></i>
           <span>+91 8149408727</span>
         </button>
       </div>
 
       <!-- Trust Bar / Core Skills -->
-      <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-y-2.5 gap-x-4 text-xs text-slate-500 dark:text-slate-400">
+      <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center gap-y-2.5 gap-x-4 text-xs text-slate-500 dark:text-slate-400">
         <span class="font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">Toolstack & Stack:</span>
         <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">SQL</span>
         <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-mono">Figma</span>
@@ -161,7 +163,7 @@
   </section>
 
   <!-- Interactive Metrics Cockpit & Visual Indicators -->
-  <section id="cockpit" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80">
+  <section id="cockpit" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -277,12 +279,12 @@
   </section>
 
   <!-- Case Studies Section -->
-  <section id="case-studies" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="case-studies" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
       <div>
         <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">Product Case Studies</h2>
         <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Deep Dives: Problem, Strategy & Execution</p>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Click on any case study card to view the detailed PRD breakdown, architecture flow, and retrospective.</p>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Click anywhere on a card to open the interactive PRD breakdown, architecture flow, and retrospective.</p>
       </div>
 
       <!-- Filter Tabs -->
@@ -297,16 +299,16 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
       <!-- Case Study 1: Agentic AI & Intent Routing -->
-      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="genai">
+      <div onclick="openCaseStudy('apollo-ai')" role="button" tabindex="0" aria-label="Open Case Study: Enterprise Agentic AI Architecture" class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between cursor-pointer group hover:border-indigo-400 dark:hover:border-indigo-500 transition-all" data-category="genai">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 rounded-full text-xs font-semibold bg-indigo-100 text-indigo-800 dark:bg-indigo-950/80 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
               Generative AI Architecture
             </span>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Conversational AI</span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400 group-hover:text-indigo-500 transition-colors">Click to read PRD ➔</span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
             Enterprise Agentic AI & Vernacular Intent Routing Architecture
           </h3>
           <p class="text-xs font-medium text-indigo-600 dark:text-indigo-400 mt-1 font-mono">
@@ -338,7 +340,7 @@
           <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
             <span>Agentic RAG</span> • <span>Quantized Router</span> • <span>Valmo API</span>
           </div>
-          <button onclick="openCaseStudy('apollo-ai')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/20">
+          <button onclick="event.stopPropagation(); openCaseStudy('apollo-ai')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-indigo-600/20">
             <span>Read Deep Dive</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
@@ -346,16 +348,16 @@
       </div>
 
       <!-- Case Study 2: KYC Automation & Shared Wallet -->
-      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="fintech">
+      <div onclick="openCaseStudy('kyc-automation')" role="button" tabindex="0" aria-label="Open Case Study: KYC Automation & Shared Wallet" class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between cursor-pointer group hover:border-emerald-400 dark:hover:border-emerald-500 transition-all" data-category="fintech">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
               FinTech & Compliance
             </span>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Junglee Games Portfolio</span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400 group-hover:text-emerald-500 transition-colors">Click to read PRD ➔</span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
             Identity Verification (KYC) at 150M+ Scale & Shared Wallet
           </h3>
           <p class="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-1 font-mono">
@@ -387,7 +389,7 @@
           <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
             <span>150M+ Users</span> • <span>DigiLocker 2.0</span> • <span>API Orchestration</span>
           </div>
-          <button onclick="openCaseStudy('kyc-automation')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-emerald-600/20">
+          <button onclick="event.stopPropagation(); openCaseStudy('kyc-automation')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-emerald-600/20">
             <span>Read Deep Dive</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
@@ -395,16 +397,16 @@
       </div>
 
       <!-- Case Study 3: Multi-Modal Search & GGWP -->
-      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="growth">
+      <div onclick="openCaseStudy('multimodal-search')" role="button" tabindex="0" aria-label="Open Case Study: Multi-Modal Search & GGWP" class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between cursor-pointer group hover:border-sky-400 dark:hover:border-sky-500 transition-all" data-category="growth">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 rounded-full text-xs font-semibold bg-sky-100 text-sky-800 dark:bg-sky-950/80 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
               Discovery & Scale
             </span>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Sportsbet Australia</span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400 group-hover:text-sky-500 transition-colors">Click to read PRD ➔</span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
             Multi-Modal Rich Search & GGWP Content Classification
           </h3>
           <p class="text-xs font-medium text-sky-600 dark:text-sky-400 mt-1 font-mono">
@@ -436,7 +438,7 @@
           <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
             <span>Video Discovery</span> • <span>UGC Moderation</span> • <span>Feed UX</span>
           </div>
-          <button onclick="openCaseStudy('multimodal-search')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-sky-600/20">
+          <button onclick="event.stopPropagation(); openCaseStudy('multimodal-search')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-600 hover:bg-sky-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-sky-600/20">
             <span>Read Deep Dive</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
@@ -444,16 +446,16 @@
       </div>
 
       <!-- Case Study 4: TDS Compliance & Retention -->
-      <div class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between" data-category="fintech">
+      <div onclick="openCaseStudy('tds-compliance')" role="button" tabindex="0" aria-label="Open Case Study: TDS Compliance & Retention" class="case-study-card glass-panel glass-card rounded-3xl p-7 border border-slate-200 dark:border-slate-800 flex flex-col justify-between cursor-pointer group hover:border-amber-400 dark:hover:border-amber-500 transition-all" data-category="fintech">
         <div>
           <div class="flex items-center justify-between mb-4">
             <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
               Tax & Retention Optimization
             </span>
-            <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Junglee Games Portfolio</span>
+            <span class="text-xs font-mono text-slate-500 dark:text-slate-400 group-hover:text-amber-500 transition-colors">Click to read PRD ➔</span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-snug group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
             Turning Statutory Tax Friction into a Retention Engine
           </h3>
           <p class="text-xs font-medium text-amber-600 dark:text-amber-400 mt-1 font-mono">
@@ -485,7 +487,7 @@
           <div class="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
             <span>Journey Mapping</span> • <span>Tax Infrastructure</span> • <span>AML Risk</span>
           </div>
-          <button onclick="openCaseStudy('tds-compliance')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-amber-600/20">
+          <button onclick="event.stopPropagation(); openCaseStudy('tds-compliance')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-600 hover:bg-amber-700 text-white flex items-center gap-1.5 transition-all shadow-md shadow-amber-600/20">
             <span>Read Deep Dive</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
@@ -496,7 +498,7 @@
   </section>
 
   <!-- Interactive RICE Prioritization & Trade-off Matrix -->
-  <section id="prioritization" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80">
+  <section id="prioritization" class="py-16 bg-slate-100/70 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800/80 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="mb-8">
@@ -543,7 +545,7 @@
   </section>
 
   <!-- PM Frameworks & Strategic DNA -->
-  <section id="frameworks" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="frameworks" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
     <div class="mb-12 text-center max-w-2xl mx-auto">
       <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">Operating Model</h2>
       <p class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">How I Build & Ship High-Scale Products</p>
@@ -594,7 +596,7 @@
   </section>
 
   <!-- Professional Experience Timeline -->
-  <section id="experience" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80 dark:border-slate-800/80">
+  <section id="experience" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200/80 dark:border-slate-800/80 scroll-mt-24">
     <div class="mb-12">
       <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-mono">Track Record</h2>
       <p class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Professional Experience</p>
@@ -783,7 +785,7 @@
   </section>
 
   <!-- Recruiter Pitch & Contact Section -->
-  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
     <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-indigo-200/80 dark:border-indigo-900/60 glow-primary relative overflow-hidden">
       
       <div class="max-w-3xl">
@@ -874,7 +876,7 @@
   <!-- Modal Container for Case Study Deep Dives -->
   <div id="case-study-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
     <!-- Backdrop -->
-    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/75 backdrop-blur-md transition-opacity"></div>
+    <div id="modal-backdrop" onclick="closeCaseStudyModal()" class="fixed inset-0 bg-slate-950/75 backdrop-blur-md transition-opacity"></div>
 
     <!-- Modal Box -->
     <div class="relative w-full max-w-4xl max-h-[90vh] bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col overflow-hidden z-10">
@@ -885,7 +887,7 @@
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
           <span>Verified PM Case Study & PRD Breakdown</span>
         </div>
-        <button id="modal-close-btn" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+        <button id="modal-close-btn" onclick="closeCaseStudyModal()" class="p-2 rounded-xl text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors" aria-label="Close modal">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
@@ -901,12 +903,12 @@
           Sachin Shinde • Product Management Portfolio
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="document.getElementById('modal-close-btn').click()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">
+          <button onclick="closeCaseStudyModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">
             Close
           </button>
-          <a href="#contact" onclick="document.getElementById('modal-close-btn').click()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-all">
+          <button onclick="closeCaseStudyModal(); scrollToSection('contact');" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-all">
             Discuss This Case Study
-          </a>
+          </button>
         </div>
       </div>
 
@@ -915,9 +917,5 @@
 
   <!-- Scripts -->
   <script src="assets/js/app.js"></script>
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-  </script>
 </body>
 </html>
