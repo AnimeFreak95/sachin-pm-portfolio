@@ -1,6 +1,6 @@
 /**
  * Sachin Shinde - Product Manager Portfolio Interactivity
- * Advanced Visual Indicators, Dials, Interactive Charts, RICE Matrix Engine & Agentic AI Architecture
+ * Performance Indicators, Dials, Comparative Bar Charts & Sportsbet Australia AI Architecture
  */
 
 // Visual Comparison Bar Chart Data
@@ -29,14 +29,14 @@ const comparisonChartData = [
   },
   {
     id: 'csat-eval',
-    title: 'Agentic AI / Assistant CSAT',
+    title: 'Apollo AI / Assistant CSAT',
     category: 'genai',
     baselineLabel: 'Benchmark',
     baselineValue: 65,
     shippedLabel: '+20% Lift',
     shippedValue: 85,
     lift: '+20% Improvement',
-    context: 'Sub-20ms Intent Routing + Agentic RAG live inventory validation'
+    context: 'Sportsbet Australia: Golden Datasets offline evaluation & pass/fail metrics'
   },
   {
     id: 'video-ctr',
@@ -47,18 +47,18 @@ const comparisonChartData = [
     shippedLabel: 'Index 115',
     shippedValue: 75,
     lift: '+15% CTR Lift',
-    context: 'Multi-modal search integrating live streams & replay cards'
+    context: 'Sportsbet Australia: Multi-modal search with Live Streams & Replays'
   },
   {
     id: 'bet-conv',
-    title: 'Platform Conversions',
+    title: 'Platform Bet Conversions',
     category: 'genai',
     baselineLabel: 'Benchmark',
     baselineValue: 70,
     shippedLabel: '+10% Lift',
     shippedValue: 80,
     lift: '+10% Conversion Lift',
-    context: 'Fast-track pipeline & zero-hallucination agentic tool execution'
+    context: 'Sportsbet Australia: Apollo AI prompt optimization & systematic A/B testing'
   },
   {
     id: 'd7-retention',
@@ -73,171 +73,96 @@ const comparisonChartData = [
   }
 ];
 
-// RICE Prioritization Matrix Data
-const riceMatrixData = [
-  {
-    initiative: 'Lightweight Intent Router & Fast-Track RAG',
-    domain: 'GenAI',
-    reach: 'Millions of Users',
-    impact: 'Massive (5/5)',
-    confidence: '95%',
-    effort: 'Medium',
-    riceScore: '475',
-    status: 'Shipped',
-    statusColor: 'purple',
-    tradeOff: 'Bypassed full 70B LLM generation for direct searches to preserve unit economics'
-  },
-  {
-    initiative: 'Aadhaar Lite & PAN Plus Revamp',
-    domain: 'FinTech',
-    reach: '150M+ Users',
-    impact: 'Massive (5/5)',
-    confidence: '90%',
-    effort: 'Medium',
-    riceScore: '450',
-    status: 'Shipped',
-    statusColor: 'emerald',
-    tradeOff: 'De-prioritized bank statement scraper to prioritize instant government APIs'
-  },
-  {
-    initiative: 'Shared Wallet & Shared KYC',
-    domain: 'FinTech / Growth',
-    reach: 'All Fantasy Users',
-    impact: 'Massive (5/5)',
-    confidence: '85%',
-    effort: 'High',
-    riceScore: '354',
-    status: 'Shipped',
-    statusColor: 'teal',
-    tradeOff: 'Postponed crypto payment options to unify identity across the core gaming apps'
-  },
-  {
-    initiative: 'Multi-Modal Rich Search',
-    domain: 'Discovery',
-    reach: 'All Sports Fans',
-    impact: 'High (4/5)',
-    confidence: '80%',
-    effort: 'Medium',
-    riceScore: '320',
-    status: 'Shipped',
-    statusColor: 'sky',
-    tradeOff: 'Postponed voice search to double down on live streams & replay cards'
-  },
-  {
-    initiative: 'In-App TDS Certificate & Cashback',
-    domain: 'Compliance',
-    reach: 'All Withdrawing Users',
-    impact: 'Medium (3/5)',
-    confidence: '95%',
-    effort: 'Low',
-    riceScore: '285',
-    status: 'Shipped',
-    statusColor: 'amber',
-    tradeOff: 'Replaced manual customer support refunds with automated programmatic cashback'
-  }
-];
-
 // Comprehensive Case Studies Data Store
 const caseStudiesData = {
   'apollo-ai': {
     id: 'apollo-ai',
     category: 'genai',
-    title: 'Enterprise Agentic AI & Vernacular Intent Routing Architecture',
-    subtitle: 'Sub-20ms Quantized Router, Fast-Track Pipeline, and Agentic RAG with Valmo Logistics',
-    role: 'Product Manager (AI & Conversational Systems)',
-    company: 'Sportsbet Australia / Consumer AI Systems',
+    title: 'Conversational AI & LLM Evaluation Engine',
+    subtitle: 'Apollo AI Chatbot & AI Betting Assistant for Sportsbet Australia (Flutter Entertainment PLC)',
+    role: 'Product Manager (AI, Search & Engagement)',
+    company: 'Sportsbet Australia (Flutter Entertainment PLC)',
     timeline: '2024 – 2026',
-    badge: 'Generative AI Architecture',
+    badge: 'Generative AI & LLMs',
     badgeColor: 'indigo',
     dials: [
-      { label: 'Router Latency', value: '<20ms', pct: 95, color: '#818cf8', subtext: 'Quantized DistilBERT / Grok Fast' },
-      { label: 'Token Cost (Fast Track)', value: '~0 Cost', pct: 99, color: '#10b981', subtext: 'Direct Catalog Search Bypass' },
-      { label: 'CSAT / Accuracy', value: '+20%', pct: 85, color: '#ec4899', subtext: 'Agentic RAG Anti-Hallucination' }
+      { label: 'CSAT Improvement', value: '+20%', pct: 85, color: '#818cf8', subtext: 'Golden Datasets offline eval' },
+      { label: 'Bet Conversions', value: '+10%', pct: 75, color: '#ec4899', subtext: 'Apollo AI prompt optimization' },
+      { label: 'New User Bets', value: '+6pp', pct: 65, color: '#10b981', subtext: '1-tap executable bet slips' }
     ],
     metrics: [
-      { label: 'Intent Classification', value: '<20ms', note: 'Quantized sub-20ms routing' },
-      { label: 'Token Economics', value: '~0 Cost', note: 'Bypasses heavy compute on fast path' },
-      { label: 'CSAT Improvement', value: '+20%', note: 'Verified by live inventory tool checks' }
+      { label: 'New User Bet Placement', value: '+6pp', note: 'Among new users via AI Assistant' },
+      { label: 'CSAT Improvement', value: '+20%', note: 'Continuous Golden Dataset evaluation' },
+      { label: 'Platform Bet Conversions', value: '+10%', note: 'Apollo AI prompt tuning & A/B testing' }
     ],
-    overview: 'Scaling conversational AI for millions of users introduces two existential traps: exploding token compute costs that destroy unit economics on low-ticket orders, and hallucinations on live inventory, pricing, and pincode deliverability. I architected an enterprise two-tier intent routing pipeline with Agentic RAG and live backend tool calling.',
+    overview: 'On the Sportsbet Australia betting app, casual and first-time punters face cognitive overload navigating dense sports odds, complex betting markets, and unfamiliar terminology. I productized Apollo AI (conversational chatbot) and an AI Betting Assistant, resolving the core enterprise AI risk—odds hallucinations and regulatory non-compliance—by architecting an offline evaluation framework using Golden Datasets and live odds tool verification.',
     problem: [
-      'Raw LLM routing for every conversational request blows up compute costs and degrades response latency.',
-      'Unstructured voice/text inputs in regional dialects (via Vani) cause generalist models to hallucinate prices and delivery timelines.',
-      'Static RAG vector lookups fail when inventory levels and pincode serviceability change in real time.'
+      'High bounce rate among new sports bettors overwhelmed by multi-level market menus and complex bet slips.',
+      'Pre-trained LLMs carried high hallucination risks (inventing odds, recommending invalid markets), violating strict Australian gambling regulations.',
+      'Prompt tweaks previously created unmonitored conversational regressions without automated regression testing.'
     ],
     strategy: [
-      'Engineered a Lightweight Intent Router using a quantized model (DistilBERT / Grok Fast) operating at sub-20ms to bifurcate direct catalog queries from complex reasoning.',
-      'Constructed a Fast-Track Pipeline for straightforward queries (e.g., "red cotton kurti"), keeping token costs near zero to protect gross margins.',
-      'Deployed a Large-Scale Reasoning Engine (Llama 3 70B / Grok 4.7) strictly as a fallback for multi-turn or ambiguous inquiries.',
-      'Implemented Agentic RAG & Live Tool Calling connecting directly to BharatMLStack, inventory databases, and Valmo logistics for pincode deliverability.'
+      'Engineered an Offline Golden Dataset Evaluation Framework covering AFL, NRL, Soccer, and Racing edge-cases with automated scoring for factual grounding, odds accuracy, and responsible gambling policy adherence.',
+      'Iterative prompt engineering and token budget optimization for Apollo AI chatbot, expanding market coverage via structured A/B tests to achieve a 10% uplift in platform bet conversions.',
+      'Shifted assistant UX from conversational chit-chat to 1-tap actionable bet slips embedded contextually in the live event stream, driving a 6pp increase in bet placement among new users.',
+      'Deployed a sub-20ms Lightweight Intent Router to fast-track straightforward market queries while reserving deep reasoning engines for multi-leg same-game multis.'
     ],
     architectureAscii: `
-    [ User Query (Voice/Text via Vani) ]
+    [ Punter Query: Voice / Text / Search ]
                      │
                      ▼
-       [ Lightweight Intent Router ] ────── (Ambiguous / Conversational) ─────┐
-       (Sub-20ms Quantized Model)                                             │
-                     │                                                        │
-          (Direct Catalog Search)                                             │
-                     │                                                        ▼
-                     │                                       [ Large-Scale Reasoning Engine ]
-                     │                                       (Llama 3 70B / Grok 4.7 Fallback)
-                     ▼                                                        │
-           [ Fast-Track Pipeline ] ◄──────────────────────────────────────────┘
-           (Near-Zero Token Overhead)
+       [ Lightweight Intent Router ] ────── (Ambiguous / Multi-Leg Multis) ──┐
+       (Sub-20ms Quantized Model)                                            │
+                     │                                                       │
+          (Direct Market Lookups)                                            │
+                     │                                                       ▼
+                     │                                      [ Large-Scale Reasoning Engine ]
+                     │                                      (Multi-Turn Sports Advisory)
+                     ▼                                                       │
+           [ Fast-Track Pipeline ] ◄─────────────────────────────────────────┘
+           (Zero-Latency Odds Retrieval)
                      │
                      ▼
-       [ Agentic RAG & Tool Calling ] ◄══════ (Data Fetch) ══════► [ Live Backend: Inventory, Pricing, Valmo ]
-       (Core Anti-Hallucination Layer)                             (Tier 3/4 Pincode Deliverability)
+       [ Agentic Tool Calling & RAG ] ◄════ (Live API Fetch) ════► [ Sportsbet Live Backend ]
+       (Anti-Hallucination & Policy Engine)                        (Live Odds, Fixtures, RG Limits)
                      │
                      ▼
           [ Response Synthesizer ]
-          (JSON-to-Conversational Translator)
+          (Contextual Odds Breakdown)
                      │
                      ▼
-       [ Vernacular Output to User ]
-       (Localized Regional Response)
+       [ 1-Tap Actionable Bet Slip ]
+       (+10% Bet Conversions | +6pp New User Bets)
     `,
-    architectureMermaid: `graph TD
-    A[User Query: Voice/Text] --> B{Lightweight Intent Router}
-    B -->|Direct Catalog Search| C[Fast-Track Pipeline]
-    B -->|Ambiguous/Conversational| D[Large-Scale Reasoning Engine]
-    C --> E[Agentic RAG & Tool Calling]
-    D --> E
-    E --> F[(Live Backend: Inventory, Pricing, Valmo)]
-    F --> E
-    E --> G[Response Synthesizer]
-    G --> H[Vernacular Output to User]`,
     architectureNodes: [
-      { step: '01', title: 'User Query (Voice/Text via Vani)', desc: 'Entry point accommodating regional users, handling unstructured regional languages and voice inputs.' },
-      { step: '02', title: 'Lightweight Intent Router', desc: 'Cost-efficient, highly quantized model (DistilBERT / Grok Fast) operating at sub-20ms latency to classify intent complexity.' },
-      { step: '03', title: 'Fast-Track Pipeline', desc: 'Execution path for straightforward searches. Bypasses heavy compute entirely to keep token costs near zero and preserve margins.' },
-      { step: '04', title: 'Large-Scale Reasoning Engine', desc: 'Heavy fallback model (Llama 3 70B / Grok 4.7) activated exclusively for multi-turn, nuanced, or ambiguous queries.' },
-      { step: '05', title: 'Agentic RAG & Tool Calling', desc: 'Core anti-hallucination layer. Triggers backend functions to fetch verified facts rather than guessing from internal memory.' },
-      { step: '06', title: 'Live Backend (Inventory, Pricing, Valmo)', desc: 'Direct integration with BharatMLStack and Valmo logistics network to confirm live stock, exact pricing, and Tier 3/4 pincode serviceability.' },
-      { step: '07', title: 'Response Synthesizer & Vernacular Output', desc: 'Translates raw JSON data into warm, natural, localized conversational output.' }
+      { step: '01', title: 'Punter Query Ingestion', desc: 'Accepts voice and text queries in colloquial sports betting terminology (e.g., AFL head-to-head, trifectas, player props).' },
+      { step: '02', title: 'Lightweight Intent Router', desc: 'Sub-20ms quantized router that classifies direct market lookups vs complex conversational bet construction.' },
+      { step: '03', title: 'Fast-Track Pipeline', desc: 'Execution path for straightforward odds queries, bypassing heavy generative compute to ensure instant responsiveness.' },
+      { step: '04', title: 'Large-Scale Reasoning Fallback', desc: 'Activated strictly for multi-turn advice, complex multi-leg same-game multis, and nuanced match previews.' },
+      { step: '05', title: 'Agentic Tool Calling & Live RAG', desc: 'Anti-hallucination layer directly triggering Sportsbet pricing APIs to verify live odds, market availability, and responsible gambling limits.' },
+      { step: '06', title: 'Golden Dataset Offline Benchmark', desc: 'Continuous CI/CD-style regression suite scoring factual grounding, market validity, and compliance (+20% CSAT).' },
+      { step: '07', title: '1-Tap Actionable Bet Slip UX', desc: 'Outputs executable bet widgets directly into the live feed, scaling new user bet placement by +6pp.' }
     ],
     interviewGuide: [
-      'Trace the path from the top: Emphasize the branching logic at the Lightweight Intent Router as the core PM decision that protects gross margins while preserving sub-second speed.',
-      'Highlight Agentic RAG & Tool Calling as the structural guardrail against hallucinations: the system queries live inventory and Valmo logistics before committing to any answer.',
-      'Explain unit economics: Why routing 100% of queries through a 70B model destroys consumer margin, and how two-tier routing solves it permanently.'
+      'Highlight the Sportsbet Australia context: High-stakes, regulated sports betting where hallucinating odds or offering invalid markets violates Australian gaming compliance.',
+      'Walk through the Two-Tier Routing: How separating direct market lookups from complex advisory protected compute latency and kept responses under sub-second SLA.',
+      'Explain Golden Datasets: How curated test cases across AFL, NRL, and Racing turned subjective LLM "vibe checks" into objective pass/fail metrics, enabling weekly prompt releases with zero regression.'
     ],
     resultsTable: [
-      { metric: 'Intent Router Latency', baseline: '150ms+ (General LLM)', result: '<20ms (Sub-20ms)', impact: 'Sub-second real-time responsiveness' },
-      { metric: 'Fast-Track Token Cost', baseline: '$0.02 - $0.05 / query', result: '~0 Token Overhead', impact: 'Protected gross margins on low-ticket orders' },
-      { metric: 'Hallucination on Pricing/Stock', baseline: '12-18% in baseline LLM', result: '0% (Ground Truth Verified)', impact: 'Live database queries via Valmo & BharatMLStack' },
-      { metric: 'User CSAT', baseline: 'Benchmark', result: '+20% Improvement', impact: 'Localized vernacular responses with zero incorrect inventory promises' }
+      { metric: 'New User Bet Placement', baseline: 'Benchmark', result: '+6 percentage points', impact: 'Accelerated D0 activation and reduced early punter churn' },
+      { metric: 'Customer Satisfaction (CSAT)', baseline: 'Standard baseline', result: '+20% Improvement', impact: 'Eliminated odds hallucinations via Golden Datasets' },
+      { metric: 'Platform Bet Conversions', baseline: 'Pre-A/B baseline', result: '+10% Uplift', impact: 'Driven by Apollo AI chatbot prompt tuning & A/B testing' }
     ],
     tradeoffs: [
-      { chosen: 'Two-tier routing with sub-20ms quantized router', deprioritized: 'Routing all queries to a single monolithic reasoning model', reason: 'Prevented ballooning server costs on low-ticket consumer transactions.' },
-      { chosen: 'Agentic tool-calling against live inventory and Valmo logistics', deprioritized: 'Static vector RAG embeddings', reason: 'Static vector search caused hallucinations on out-of-stock items and unserviceable pincodes.' }
+      { chosen: 'Strict Golden Dataset offline benchmarking before deployment', deprioritized: 'Direct un-evaluated model updates', reason: 'Prevented brand damage and Australian regulatory compliance violations.' },
+      { chosen: 'Single-tap actionable bet slip generation', deprioritized: 'Open-ended chit-chat dialogue trees', reason: 'Sports fans prioritize fast bet placement during live matches over conversational small talk.' }
     ],
     learnings: [
-      'System Architecture is Product Strategy: The choice of routing logic dictates your product’s unit margins and operational viability.',
-      'Live Tools Beat Pre-trained Weights: Never let an LLM guess pricing, inventory, or delivery dates—enforce hard database tool execution.',
-      'Speed and Cost are UX Features: Sub-20ms intent routing creates a "Lightspeed" user feeling while preserving enterprise compute budgets.'
+      'Evaluation is 80% of Generative AI PM work: Offline Golden Datasets turn subjective prompt tweaks into reliable regression suites.',
+      'Action beats conversation: In consumer betting apps, users convert when given interactive, executable widgets (bet slips, deep links), not walls of text.',
+      'Strict automated guardrails give engineering the confidence to deploy prompt iterations weekly in a regulated market.'
     ],
-    markdownFile: 'case-studies/01-agentic-ai-vernacular-architecture.md'
+    markdownFile: 'case-studies/01-apollo-ai-golden-datasets.md'
   },
 
   'kyc-automation': {
@@ -246,7 +171,7 @@ const caseStudiesData = {
     title: 'Identity Verification (KYC) at 150M+ Scale & Shared Wallet',
     subtitle: 'Automated Compliance, CAC Reduction & Multi-Product Monetization',
     role: 'Product Manager (Transactions: KYC, Compliance & Withdrawals)',
-    company: 'Junglee Games India Pvt. Ltd.',
+    company: 'Junglee Games India Pvt. Ltd. (Flutter Entertainment PLC)',
     timeline: '2023 – 2026',
     badge: 'FinTech Infrastructure',
     badgeColor: 'emerald',
@@ -311,12 +236,12 @@ const caseStudiesData = {
   'multimodal-search': {
     id: 'multimodal-search',
     category: 'growth',
-    title: 'Multi-Modal Search & UGC Moderation Scalability',
-    subtitle: 'Rich Content Search & GGWP Content Classification System',
+    title: 'Multi-Modal Search & GGWP Content Classification',
+    subtitle: 'Rich Content Search & Feed Moderation for Sportsbet Australia (Flutter Entertainment PLC)',
     role: 'Product Manager (AI, Search & Engagement)',
-    company: 'Sportsbet Australia / Junglee Games',
+    company: 'Sportsbet Australia (Flutter Entertainment PLC)',
     timeline: '2024 – 2026',
-    badge: 'Discovery & Growth',
+    badge: 'Discovery & Engagement',
     badgeColor: 'sky',
     dials: [
       { label: 'Video Asset CTR', value: '+15%', pct: 75, color: '#0284c7', subtext: 'Multi-modal search cards' },
@@ -328,16 +253,16 @@ const caseStudiesData = {
       { label: 'Bet Conversion Rate', value: '+7%', note: 'Targeted feed UX optimizations' },
       { label: 'Content Scalability', value: 'GGWP Engine', note: 'Automated UGC classification' }
     ],
-    overview: 'As sports platforms evolve into social and creator-driven ecosystems, static event listings fail to engage modern fans. For Sportsbet Australia, I re-architected Rich Content Search into a multi-modal discovery experience and engineered the GGWP content classification system to automate UGC moderation at scale.',
+    overview: 'As Sportsbet Australia expanded from pure match betting into social and community-driven sports viewing, static match listings failed to drive engagement. I spearheaded the transformation of Rich Content Search into a multi-modal discovery experience and architected the GGWP content classification system to automate UGC moderation at scale.',
     problem: [
-      'High-value live video streams and match replays were buried under static text menus, hurting asset monetization.',
-      'Search results lacked social proof, tipster track records, and video context.',
-      'Exploding user-generated bet descriptions overwhelmed manual moderation queues ahead of major sporting matches.'
+      'High-value live sports broadcasts and replay clips were buried under rigid text menus, depressing video asset discoverability.',
+      'Punters searching for upcoming matches had no access to tipster commentary, form guides, or visual match replays in the search flow.',
+      'Exploding volumes of user-generated bet descriptions overwhelmed manual moderation queues ahead of major sporting matches.'
     ],
     strategy: [
-      'Expanded Rich Content Search into a multi-modal experience integrating User Profiles, Live Streams, and Replay cards, driving a 15% lift in video-asset CTR.',
+      'Expanded Rich Content Search into a multi-modal discovery experience integrating User Profiles, Live Streams, and Replay cards, driving a 15% lift in video-asset CTR.',
       'Architected the GGWP content classification system for automated categorization and moderation of user-generated bet descriptions, enhancing backend scalability.',
-      'Conducted end-to-end user research and PRD definition for the feed moderation system, executing targeted UX tweaks that drove a 7% increase in bet conversion rates.'
+      'Orchestrated end-to-end product discovery and PRD definition for the feed moderation system, executing targeted UX tweaks that drove a 7% increase in bet conversion rates.'
     ],
     architectureAscii: `
 [Search / Feed Stream] ──► [Multi-Modal Query Router] ──► [Profiles, Live Streams, Replays]
@@ -376,7 +301,7 @@ const caseStudiesData = {
     title: 'Tax Compliance & Retention Optimization',
     subtitle: 'In-App TDS Certificates, First-Withdrawal Cashback & AML Controls',
     role: 'Product Manager (Transactions: KYC, Compliance & Withdrawals)',
-    company: 'Junglee Games India Pvt. Ltd.',
+    company: 'Junglee Games India Pvt. Ltd. (Flutter Entertainment PLC)',
     timeline: '2023 – 2024',
     badge: 'FinTech & Compliance',
     badgeColor: 'amber',
@@ -481,7 +406,7 @@ window.openCaseStudy = function(studyId) {
         <div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-3 font-mono">
           <span><strong>Role:</strong> ${data.role}</span>
           <span>•</span>
-          <span><strong>Context:</strong> ${data.company}</span>
+          <span><strong>Delivered For:</strong> ${data.company}</span>
         </div>
       </div>
 
@@ -560,7 +485,7 @@ window.openCaseStudy = function(studyId) {
           <div>
             <div class="flex items-center justify-between mb-2">
               <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">Visual Architecture Flowchart</h3>
-              <span class="text-[11px] font-mono text-indigo-500 font-semibold">Sub-20ms Routing + Agentic RAG</span>
+              <span class="text-[11px] font-mono text-indigo-500 font-semibold">Sub-20ms Routing + Live API Verification</span>
             </div>
             <pre class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs font-mono overflow-x-auto border border-slate-800 leading-relaxed">${data.architectureAscii.trim()}</pre>
           </div>
@@ -784,33 +709,6 @@ function renderComparisonChart(categoryFilter) {
   `).join('');
 }
 
-function renderRiceMatrix() {
-  const tableBody = document.getElementById('rice-matrix-tbody');
-  if (!tableBody) return;
-
-  tableBody.innerHTML = riceMatrixData.map(row => `
-    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
-      <td class="p-3.5 font-bold text-slate-900 dark:text-white">
-        <div>${row.initiative}</div>
-        <div class="text-[11px] text-slate-500 font-normal mt-0.5">${row.tradeOff}</div>
-      </td>
-      <td class="p-3.5 text-xs">
-        <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 font-mono">${row.domain}</span>
-      </td>
-      <td class="p-3.5 text-xs font-mono">${row.reach}</td>
-      <td class="p-3.5 text-xs font-mono font-medium">${row.impact}</td>
-      <td class="p-3.5 text-xs font-mono">${row.confidence}</td>
-      <td class="p-3.5 text-xs font-mono">${row.effort}</td>
-      <td class="p-3.5 text-sm font-mono font-extrabold text-indigo-600 dark:text-indigo-400">${row.riceScore}</td>
-      <td class="p-3.5 text-xs">
-        <span class="px-2.5 py-1 rounded-full font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-          ${row.status}
-        </span>
-      </td>
-    </tr>
-  `).join('');
-}
-
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const storedTheme = localStorage.getItem('theme');
@@ -876,7 +774,6 @@ function setupModalListeners() {
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   renderComparisonChart('all');
-  renderRiceMatrix();
   initCaseStudyFilters();
   setupModalListeners();
   if (window.lucide) window.lucide.createIcons();
