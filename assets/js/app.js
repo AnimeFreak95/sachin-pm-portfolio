@@ -85,6 +85,13 @@ const caseStudiesData = {
     timeline: '2024 – 2026',
     badge: 'Generative AI & LLMs',
     badgeColor: 'indigo',
+    pipelineDiagram: [
+      { step: '01', title: 'User Query Ingestion', label: 'Voice / Text / Colloquial Intent' },
+      { step: '02', title: 'Tier-1 Fast Classifier', label: 'FAQ / Account / Direct Lookups (<150ms)' },
+      { step: '03', title: 'Tier-2 Apollo LLM', label: 'Sportsbet Live Odds & Form Context' },
+      { step: '04', title: 'Golden Dataset Gate', label: 'Grounding, RG & Hallucination Guardrails' },
+      { step: '05', title: 'In-Chat Bet Slip CTA', label: '1-Tap Executable Bet (+10% Conversion)' }
+    ],
     dials: [
       { label: 'CSAT Improvement', value: '+20%', pct: 85, color: '#818cf8', subtext: 'Golden Datasets offline eval' },
       { label: 'Bet Conversions', value: '+10%', pct: 75, color: '#ec4899', subtext: 'Apollo AI prompt optimization' },
@@ -162,6 +169,32 @@ const caseStudiesData = {
       'Action beats conversation: In consumer betting apps, users convert when given interactive, executable widgets (bet slips, deep links), not walls of text.',
       'Strict automated guardrails give engineering the confidence to deploy prompt iterations weekly in a regulated market.'
     ],
+    goldenDatasetRubric: [
+      {
+        dimension: 'Factual Odds Grounding',
+        archetype: 'Multi-leg Same Game Multi (SGM) runner comparison',
+        criteria: '100% match with live pricing API; zero fabricated runner stats',
+        guardrail: 'Block response; fallback to deterministic stat card'
+      },
+      {
+        dimension: 'Intent Routing Latency',
+        archetype: 'High-concurrency Saturday race day spike',
+        criteria: 'Tier-1 classification <150ms; end-to-end stream <1.8s',
+        guardrail: 'Route simple queries to deterministic FAQ cache'
+      },
+      {
+        dimension: 'Responsible Gambling (RG)',
+        archetype: 'User expresses frustration, chasing losses, or limit inquiry',
+        criteria: 'Zero betting encouragement; immediate surface of RG deposit limit tools',
+        guardrail: 'Hard override to mandatory RG compliance workflow'
+      },
+      {
+        dimension: 'Bet Slip Actionability',
+        archetype: 'High-intent runner inquiry ("Who has best form in Race 4?")',
+        criteria: 'Accurate form summary + 1-click contextual Bet Slip deep link',
+        guardrail: 'Suppress CTA if market is suspended or closed'
+      }
+    ],
     markdownFile: 'case-studies/01-apollo-ai-golden-datasets.md'
   },
 
@@ -175,6 +208,18 @@ const caseStudiesData = {
     timeline: '2023 – 2026',
     badge: 'FinTech Infrastructure',
     badgeColor: 'emerald',
+    pipelineDiagram: [
+      { step: '01', title: 'User D0 Entry', label: 'Onboarding / Deposit / Withdrawal Gate' },
+      { step: '02', title: 'Aadhaar / PAN Plus / DigiLocker 2.0', label: 'Instant NSDL & Government Registry Verification' },
+      { step: '03', title: 'Primary: Hyperverge OCR & Liveness', label: 'Automated Face Match & Document Extraction' },
+      { step: '04', title: 'Auto-Failover: Idfy API', label: 'Dynamic Latency & Health-Check Fallback' },
+      { step: '05', title: 'Unified KYC & Shared Wallet', label: 'Single Token Propagated Across Fantasy Apps' }
+    ],
+    funnelHighlights: [
+      { metric: '2.7% ➔ 4.8%', label: 'D0 Verification Conversion', note: '-35% CAC Burn on Paid Channels (+78% relative lift)' },
+      { metric: '+40% / -25%', label: 'Automation & TAT Gain', note: '40% automated approval; 25% reduction in manual review TAT' },
+      { metric: '+18% / +38%', label: 'Cross-Sell & Revenue', note: '18% D0 cross-sell conversion; 38% top-line revenue growth' }
+    ],
     dials: [
       { label: 'KYC Automation', value: '40%', pct: 80, color: '#10b981', subtext: 'Across 150M+ users' },
       { label: 'CAC Reduction', value: '35%', pct: 70, color: '#6366f1', subtext: 'D0 conv: 2.7% ➔ 4.8%' },
@@ -243,6 +288,18 @@ const caseStudiesData = {
     timeline: '2024 – 2026',
     badge: 'Discovery & Engagement',
     badgeColor: 'sky',
+    splitArchitecture: {
+      discovery: [
+        { step: '01', title: 'Unified Search Bar', label: 'Sports, Matches, Runners & Tipsters' },
+        { step: '02', title: 'Multi-Modal Indexer', label: 'Profiles + Live Video Streams + Replays' },
+        { step: '03', title: 'Interactive Media Feed', label: '+15% Video CTR & +20% Search-to-Play' }
+      ],
+      moderation: [
+        { step: '01', title: 'Real-Time UGC Stream', label: 'User Bet Descriptions & Tipster Chatter' },
+        { step: '02', title: 'GGWP AI Toxicity Classifier', label: 'Automated Community & Compliance Rules' },
+        { step: '03', title: 'Auto-Mute & Priority Queue', label: '+35% Moderation Efficiency & +7% Bet Conv.' }
+      ]
+    },
     dials: [
       { label: 'Video Asset CTR', value: '+15%', pct: 75, color: '#0284c7', subtext: 'Multi-modal search cards' },
       { label: 'Bet Conversion Rate', value: '+7%', pct: 70, color: '#6366f1', subtext: 'Feed moderation UX' },
@@ -305,6 +362,12 @@ const caseStudiesData = {
     timeline: '2023 – 2024',
     badge: 'FinTech & Compliance',
     badgeColor: 'amber',
+    retentionLoop: [
+      { step: '01', title: 'Statutory 30% TDS Gate', label: 'Mandatory deduction on net winnings at withdrawal' },
+      { step: '02', title: 'Friction & Churn Risk', label: 'Withdrawal shock, calculation confusion & dispute tickets' },
+      { step: '03', title: 'Tri-Partite Intervention', label: '1) Real-time passbook ledger • 2) Instant Form 16A PDF • 3) First-withdrawal cashback' },
+      { step: '04', title: 'Impact Realization', label: '+10% D7 Retention • -25% Support Tickets • +1.5pp D30 Retention • 98% Compliance' }
+    ],
     dials: [
       { label: 'Regulatory Compliance', value: '98%', pct: 98, color: '#f59e0b', subtext: 'Redesigned risk controls' },
       { label: 'D7 Retention Lift', value: '+10%', pct: 75, color: '#10b981', subtext: 'Automated TDS certificate' },
@@ -480,11 +543,155 @@ window.openCaseStudy = function(studyId) {
       </div>
 
       <!-- Tab 2: System Architecture -->
-      <div id="tab-architecture" class="modal-tab-content hidden space-y-5">
+      <div id="tab-architecture" class="modal-tab-content hidden space-y-6">
+        
+        <!-- Interactive Pipeline Flow (Styled CSS Flex/Grid) -->
+        ${data.pipelineDiagram ? `
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">End-to-End System Pipeline</h3>
+              <span class="text-[11px] font-mono text-indigo-500 dark:text-indigo-400 font-semibold">Production Architecture</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2.5">
+              ${data.pipelineDiagram.map((p, idx) => `
+                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col justify-between relative">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold text-indigo-600 dark:text-indigo-400">Step ${p.step}</span>
+                      ${idx < 4 ? '<span class="hidden sm:inline text-slate-400 text-xs">➔</span>' : ''}
+                    </div>
+                    <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">${p.title}</div>
+                  </div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 font-mono leading-tight">${p.label}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Multi-Modal Discovery & Moderation Split Architecture -->
+        ${data.splitArchitecture ? `
+          <div class="space-y-4">
+            <div>
+              <div class="flex items-center gap-2 mb-2 text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider font-mono">
+                <i data-lucide="compass" class="w-4 h-4"></i>
+                <span>Discovery Path: Multi-Modal Rich Content</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                ${data.splitArchitecture.discovery.map((p, idx) => `
+                  <div class="p-3 rounded-xl bg-sky-50/50 dark:bg-slate-800/90 border border-sky-200/80 dark:border-slate-700 flex flex-col justify-between">
+                    <div>
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold text-sky-600 dark:text-sky-400">Phase ${p.step}</span>
+                        ${idx < 2 ? '<span class="hidden sm:inline text-sky-400 text-xs">➔</span>' : ''}
+                      </div>
+                      <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">${p.title}</div>
+                    </div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 font-mono leading-tight">${p.label}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider font-mono">
+                <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                <span>Trust & Safety Path: GGWP AI Moderation</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                ${data.splitArchitecture.moderation.map((p, idx) => `
+                  <div class="p-3 rounded-xl bg-emerald-50/50 dark:bg-slate-800/90 border border-emerald-200/80 dark:border-slate-700 flex flex-col justify-between">
+                    <div>
+                      <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400">Phase ${p.step}</span>
+                        ${idx < 2 ? '<span class="hidden sm:inline text-emerald-400 text-xs">➔</span>' : ''}
+                      </div>
+                      <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">${p.title}</div>
+                    </div>
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 font-mono leading-tight">${p.label}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Retention Loop Architecture for TDS -->
+        ${data.retentionLoop ? `
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">Behavioral Friction & Retention Loop</h3>
+              <span class="text-[11px] font-mono text-amber-500 font-semibold">Psychological Defusion</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2.5">
+              ${data.retentionLoop.map((p, idx) => `
+                <div class="p-3 rounded-xl bg-amber-50/40 dark:bg-slate-800/90 border border-amber-200/80 dark:border-slate-700 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between mb-1">
+                      <span class="text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400">Stage ${p.step}</span>
+                      ${idx < 3 ? '<span class="hidden sm:inline text-amber-400 text-xs">➔</span>' : ''}
+                    </div>
+                    <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">${p.title}</div>
+                  </div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-2 font-mono leading-tight">${p.label}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Golden Dataset Rubric Table for Sportsbet AI -->
+        ${data.goldenDatasetRubric ? `
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 font-mono flex items-center gap-1.5">
+                <i data-lucide="check-square" class="w-4 h-4"></i>
+                Sample Golden Dataset Evaluation Rubric
+              </h3>
+              <span class="text-[11px] font-mono text-slate-500">Continuous CI/CD Gating</span>
+            </div>
+            <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-purple-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold uppercase font-mono">
+                  <tr>
+                    <th class="p-2.5">Eval Dimension</th>
+                    <th class="p-2.5">Test Case / Prompt Archetype</th>
+                    <th class="p-2.5">Ground Truth / Pass Criteria</th>
+                    <th class="p-2.5">Guardrail Action on Fail</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+                  ${data.goldenDatasetRubric.map(rub => `
+                    <tr>
+                      <td class="p-2.5 font-bold text-slate-900 dark:text-white font-mono whitespace-nowrap">${rub.dimension}</td>
+                      <td class="p-2.5">${rub.archetype}</td>
+                      <td class="p-2.5 text-emerald-600 dark:text-emerald-400 font-medium">${rub.criteria}</td>
+                      <td class="p-2.5 text-rose-500 dark:text-rose-400 font-mono text-[11px]">${rub.guardrail}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ` : ''}
+
+        <!-- Key Funnel Metrics Highlight (KYC) -->
+        ${data.funnelHighlights ? `
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            ${data.funnelHighlights.map(h => `
+              <div class="p-3.5 rounded-xl bg-emerald-50/60 dark:bg-slate-800 border border-emerald-200/80 dark:border-slate-700">
+                <div class="text-lg font-mono font-extrabold text-emerald-600 dark:text-emerald-400">${h.metric}</div>
+                <div class="text-xs font-bold text-slate-900 dark:text-white mt-0.5">${h.label}</div>
+                <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">${h.note}</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
         ${data.architectureAscii ? `
           <div>
             <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">Visual Architecture Flowchart</h3>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-mono">ASCII Logic & Network Routing</h3>
               <span class="text-[11px] font-mono text-indigo-500 font-semibold">Sub-20ms Routing + Live API Verification</span>
             </div>
             <pre class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs font-mono overflow-x-auto border border-slate-800 leading-relaxed">${data.architectureAscii.trim()}</pre>
